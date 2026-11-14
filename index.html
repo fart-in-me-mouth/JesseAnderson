@@ -2,275 +2,640 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The Apexist Summa | Jesse Anderson</title>
-<meta name="description" content="The Apexist Summa: Goatis Source Edition by Jesse Anderson. Nineteen Books on Natural Living and the Case for Life Without Gods.">
+<meta name="description" content="The Apexist Summa: Goatis Source Edition by Jesse Anderson. Nineteen Books, 165 Questions and more than 1,300 pages on natural living and the case for life without gods.">
+<meta property="og:title" content="The Apexist Summa: Goatis Source Edition">
+<meta property="og:description" content="Nineteen Books on Natural Living and the Case for Life Without Gods, by Jesse Anderson.">
+<meta property="og:type" content="book">
+<meta name="theme-color" content="#5E1220">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='6' fill='%235E1220'/%3E%3Ctext x='32' y='46' font-family='Georgia,serif' font-size='40' font-weight='700' text-anchor='middle' fill='%23E6C98A'%3EA%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: a manuscript folio. Narrow text column, a ruled margin for book numerals, and the contents as the centerpiece. */
+/* Layout: a manuscript folio. A ruled margin column carries labels and numerals; the contents and a live Article are the centerpieces. */
 :root{
-  --stone:#ECEBE5; --leaf:#F6F5F0; --ink:#1C2320; --ink-soft:#4A5550; --rule:#C9CBC2;
-  --garnet:#8A1C2B; --garnet-soft:#F1E1E1; --moss:#3F5A45;
+  --stone:#ECEBE5; --leaf:#F7F6F1; --ink:#1C2320; --ink-soft:#4F5A54; --rule:#CDCFC6;
+  --garnet:#8A1C2B; --garnet-soft:#F2E2E2; --moss:#3F5A45; --gilt:#B08A3E;
+  --p1:#8A1C2B; --p2:#B8574A; --p3:#3F5A45; --p4:#1F3A4A;
+  --cover:#5E1220; --cover-deep:#3E0B15; --cover-gilt:#E6C98A;
   --display:"Cormorant Garamond","Cormorant",Garamond,"Times New Roman",serif;
   --body:"Newsreader",Georgia,"Times New Roman",serif;
   --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  --shadow:0 30px 60px -20px rgba(40,10,15,.45),0 12px 24px -12px rgba(0,0,0,.35);
+  color-scheme:light;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --stone:#141917; --leaf:#1B211E; --ink:#E7E4DA; --ink-soft:#A3A89F; --rule:#323A35;
-  --garnet:#E0838D; --garnet-soft:#3A2226; --moss:#93B49A; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --stone:#141917; --leaf:#1B211E; --ink:#E7E4DA; --ink-soft:#A3A89F; --rule:#323A35;
-  --garnet:#E0838D; --garnet-soft:#3A2226; --moss:#93B49A; color-scheme:dark}
+@media (prefers-color-scheme: dark){:root{
+  --stone:#121614; --leaf:#191E1B; --ink:#E9E6DC; --ink-soft:#A6ABA2; --rule:#2F3732;
+  --garnet:#E5868F; --garnet-soft:#3A2126; --moss:#93B49A; --gilt:#D9B66E;
+  --p1:#E5868F; --p2:#E0A07F; --p3:#93B49A; --p4:#8DB3C9;
+  --shadow:0 30px 60px -20px rgba(0,0,0,.8),0 12px 24px -12px rgba(0,0,0,.6);
+  color-scheme:dark}}
 
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}body{margin:0;background:var(--stone);color:var(--ink);font-family:var(--body);font-size:1.075rem;line-height:1.65;
-  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-.wrap{max-width:62rem;margin:0 auto}
-a{color:var(--garnet)}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:4.5rem}
+body{margin:0;background:var(--stone);color:var(--ink);font-family:var(--body);font-size:1.075rem;line-height:1.65;overflow-x:hidden}
+.gutter{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:64rem;margin:0 auto}
+a{color:var(--garnet);text-underline-offset:.18em}
 :focus-visible{outline:2px solid var(--garnet);outline-offset:3px}
-h1,h2,h3{font-family:var(--display);font-weight:600;text-wrap:balance;margin:0;line-height:1.1}
-.label{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+::selection{background:var(--garnet);color:var(--leaf)}
+h1,h2,h3{font-family:var(--display);font-weight:600;text-wrap:balance;margin:0;line-height:1.08}
 p{margin:0}
+.label{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Nav */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--stone)}
+nav.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--stone) 86%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+nav.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:3.6rem}
+.mark{font-family:var(--display);font-weight:700;font-size:1.25rem;letter-spacing:.04em;text-decoration:none;color:var(--ink);white-space:nowrap}
+.mark span{color:var(--garnet)}
+nav.top ul{list-style:none;margin:0;padding:0;display:flex;gap:1.4rem}
+nav.top ul a{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;padding:.4rem 0;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+nav.top ul a:hover,nav.top ul a.on{color:var(--garnet);border-color:var(--garnet)}
+.progress{position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:var(--garnet);transform-origin:0 50%;transform:scaleX(0)}
 
 /* Hero */
-header.hero{padding-block:4.5rem 3rem;display:grid;grid-template-columns:minmax(0,1fr) 15rem;gap:3rem;align-items:end;border-bottom:1px solid var(--rule)}
-.hero h1{font-size:clamp(3rem,9vw,6.2rem);font-weight:600;letter-spacing:-.01em;line-height:.92}
-.hero h1 em{display:block;font-style:italic;font-weight:500;color:var(--garnet);font-size:.5em;letter-spacing:0;margin-top:.6rem}
-.hero .sub{font-family:var(--display);font-size:clamp(1.25rem,2.6vw,1.6rem);font-style:italic;color:var(--ink-soft);margin-top:1.4rem;max-width:34ch}
-.hero .by{margin-top:2rem;font-family:var(--display);font-size:1.4rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
-.colophon{display:grid;gap:.9rem;padding:1.25rem 0;border-top:3px double var(--ink);border-bottom:3px double var(--ink)}
-.colophon div{display:grid;gap:.1rem}
-.colophon b{font-family:var(--display);font-size:1.6rem;font-weight:600;line-height:1;font-variant-numeric:lining-nums tabular-nums}
-.colophon span{font-size:.92rem;color:var(--ink-soft)}
+header.hero{position:relative;padding-block:4.5rem 4rem;overflow:hidden}
+.hero .ghost{position:absolute;right:-2rem;top:-3rem;font-family:var(--display);font-weight:700;font-size:clamp(14rem,34vw,26rem);line-height:.8;color:transparent;-webkit-text-stroke:1px var(--rule);pointer-events:none;user-select:none;letter-spacing:-.04em}
+.hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 19rem;gap:3.5rem;align-items:center}
+.eyebrow{display:inline-flex;gap:.6rem;align-items:center}
+.eyebrow::before{content:"";width:2.2rem;height:1px;background:var(--garnet)}
+.hero h1{font-size:clamp(3.3rem,9.5vw,6.8rem);font-weight:600;letter-spacing:-.015em;line-height:.9;margin-top:1.3rem}
+.hero h1 .w{display:inline-block;animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.hero h1 .w:nth-child(2){animation-delay:.08s}.hero h1 .w:nth-child(3){animation-delay:.16s}
+.hero h1 em{display:block;font-style:italic;font-weight:500;color:var(--garnet);font-size:.46em;letter-spacing:0;margin-top:.8rem;animation:rise .9s .28s cubic-bezier(.2,.7,.2,1) both}
+.hero .sub{font-family:var(--display);font-size:clamp(1.3rem,2.6vw,1.7rem);font-style:italic;color:var(--ink-soft);margin-top:1.4rem;max-width:30ch;animation:rise .9s .38s cubic-bezier(.2,.7,.2,1) both}
+.byline{margin-top:1.8rem;display:flex;align-items:center;gap:1rem;animation:rise .9s .46s cubic-bezier(.2,.7,.2,1) both}
+.byline b{font-family:var(--display);font-size:1.45rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.ctas{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2.2rem;animation:rise .9s .54s cubic-bezier(.2,.7,.2,1) both}
+.btn{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--mono);font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 1.2rem;border:1px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;border-radius:2px;text-decoration:none;transition:background .2s,color .2s,transform .2s,box-shadow .2s}
+.btn:hover{background:var(--ink);color:var(--stone);transform:translateY(-2px)}
+.btn.solid{background:var(--garnet);border-color:var(--garnet);color:var(--leaf);box-shadow:0 10px 24px -12px var(--garnet)}
+.btn.solid:hover{background:var(--ink);border-color:var(--ink);color:var(--stone)}
+.btn .arr{transition:transform .2s}.btn:hover .arr{transform:translateX(3px)}
+.btn.sm{padding:.55rem .85rem;font-size:.7rem}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+/* 3D book */
+.stage{perspective:1600px;display:grid;place-items:center;padding-block:1rem;animation:rise 1.1s .2s cubic-bezier(.2,.7,.2,1) both}
+.book{position:relative;width:15.5rem;aspect-ratio:2/3;max-width:100%;transform-style:preserve-3d;transform:rotateY(-26deg) rotateX(6deg);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.book .face{position:absolute;inset:0;border-radius:2px 6px 6px 2px;background:
+  radial-gradient(120% 80% at 30% 15%,rgba(255,255,255,.12),transparent 55%),
+  linear-gradient(90deg,rgba(0,0,0,.35) 0,rgba(0,0,0,0) 5%,rgba(255,255,255,.08) 6.5%,rgba(0,0,0,0) 9%),
+  var(--cover);box-shadow:var(--shadow);transform:translateZ(1.1rem);display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:1.6rem 1.2rem 1.4rem 1.6rem;color:var(--cover-gilt);text-align:center;overflow:hidden}
+.book .face::after{content:"";position:absolute;inset:.7rem .7rem .7rem 1.1rem;border:1px solid rgba(230,201,138,.45);border-radius:2px;pointer-events:none}
+.book .face::before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.18) 45%,transparent 60%);transform:translateX(var(--sheen,-60%));transition:transform .6s}
+.cv-top{font-family:var(--mono);font-size:.55rem;letter-spacing:.3em;text-transform:uppercase;opacity:.85}
+.cv-title{font-family:var(--display);font-weight:700;font-size:2.05rem;line-height:.95;letter-spacing:.02em}
+.cv-title i{display:block;font-weight:500;font-size:.5em;margin-top:.55rem;letter-spacing:.06em}
+.cv-orn{width:3.2rem;height:3.2rem}
+.cv-auth{font-family:var(--display);font-weight:600;font-size:.95rem;letter-spacing:.24em;text-transform:uppercase}
+.book .pages{position:absolute;top:.35rem;bottom:.35rem;left:calc(100% - 1.25rem);width:2.2rem;transform:rotateY(90deg);background:repeating-linear-gradient(90deg,#f3eee0 0 1px,#ddd5c0 1px 2px)}
+.book .spine{position:absolute;top:0;bottom:0;left:-1.1rem;width:2.2rem;transform:rotateY(-90deg);background:linear-gradient(90deg,var(--cover-deep),var(--cover));border-radius:2px 0 0 2px}
+.book .back{position:absolute;inset:0;transform:translateZ(-1.1rem);background:var(--cover-deep);border-radius:2px 6px 6px 2px}
+.stage .shadow{width:13rem;height:1.4rem;margin-top:1.4rem;background:radial-gradient(closest-side,rgba(0,0,0,.28),transparent);filter:blur(2px)}
+
+/* Figures */
+.figures{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-block:3px double var(--ink)}
+.figures div{padding:1.4rem 1.2rem;display:grid;gap:.25rem;border-right:1px solid var(--rule)}
+.figures div:last-child{border-right:0}
+.figures b{font-family:var(--display);font-size:clamp(2.2rem,5vw,3.2rem);font-weight:600;line-height:1;font-variant-numeric:lining-nums tabular-nums;color:var(--ink)}
+.figures span{font-size:.92rem;color:var(--ink-soft);line-height:1.35}
 
 /* Sections */
-section{padding-block:3.5rem;border-bottom:1px solid var(--rule)}
-.sec-head{display:grid;grid-template-columns:9rem minmax(0,1fr);gap:2rem;margin-bottom:1.75rem;align-items:baseline}
-.sec-head h2{font-size:clamp(1.9rem,4vw,2.6rem)}
-.body-col{margin-left:11rem;max-width:40rem;display:grid;gap:1.1rem;min-width:0}
-.lede{font-size:1.22rem;line-height:1.55}
-.lede::first-letter{font-family:var(--display);float:left;font-size:4.4em;line-height:.8;padding:.06em .1em 0 0;color:var(--garnet);font-weight:600}
+section{padding-block:4.5rem;border-bottom:1px solid var(--rule)}
+.sec-head{display:grid;grid-template-columns:10rem minmax(0,1fr);gap:2rem;margin-bottom:2rem;align-items:baseline}
+.sec-head h2{font-size:clamp(2rem,4.4vw,3rem)}
+.sec-head h2 em{color:var(--garnet);font-style:italic;font-weight:500}
+.indent{margin-left:12rem}
+.body-col{max-width:40rem;display:grid;gap:1.15rem;min-width:0}
+.lede{font-size:1.24rem;line-height:1.55}
+.lede::first-letter{font-family:var(--display);float:left;font-size:4.6em;line-height:.8;padding:.06em .1em 0 0;color:var(--garnet);font-weight:700}
+.about-grid{display:grid;grid-template-columns:minmax(0,1fr) 15rem;gap:3rem;align-items:start}
+.pull{position:sticky;top:6rem;border-top:3px double var(--ink);padding-top:1.2rem;display:grid;gap:.8rem}
+.pull q{font-family:var(--display);font-style:italic;font-size:2rem;line-height:1.1;color:var(--garnet);quotes:"\201C" "\201D"}
+.pull p{font-size:.9rem;color:var(--ink-soft);line-height:1.45}
+.topics{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.4rem}
+.topics span{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;padding:.25rem .55rem;border:1px solid var(--rule);border-radius:999px;color:var(--ink-soft);transition:border-color .2s,color .2s}
+.topics span:hover{border-color:var(--garnet);color:var(--garnet)}
 
-/* Method */
-.method{margin-left:11rem;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border:1px solid var(--rule);background:var(--leaf)}
-.method div{padding:1.1rem 1rem;border-right:1px solid var(--rule);display:grid;gap:.35rem;align-content:start;min-width:0}
-.method div:last-child{border-right:0}
-.method .label{color:var(--garnet)}
-.method h3{font-size:1.3rem}
-.method p{font-size:.93rem;color:var(--ink-soft);line-height:1.45}
+/* Volume map */
+.vmap{display:grid;gap:.9rem}
+.vbar{display:flex;height:4.2rem;gap:2px;border-radius:3px;overflow:hidden}
+.vbar button{all:unset;cursor:pointer;position:relative;min-width:0;display:flex;align-items:flex-end;justify-content:center;padding:.35rem 0;font-family:var(--display);font-weight:700;font-size:.8rem;color:var(--leaf);transition:filter .2s,transform .25s;transform-origin:bottom}
+.vbar button span{overflow:hidden;white-space:nowrap}
+.vbar button:hover,.vbar button:focus-visible{filter:brightness(1.18) saturate(1.1);transform:scaleY(1.08)}
+.vbar button:focus-visible{outline:2px solid var(--ink);outline-offset:-2px}
+.vscale{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.7rem;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+.vinfo{min-height:3.2rem;display:flex;flex-wrap:wrap;gap:.3rem 1rem;align-items:baseline}
+.vinfo b{font-family:var(--display);font-size:1.5rem;font-weight:600}
+.legend{display:flex;flex-wrap:wrap;gap:.5rem 1.4rem}
+.legend span{display:inline-flex;gap:.5rem;align-items:center;font-size:.9rem;color:var(--ink-soft)}
+.legend i{width:.8rem;height:.8rem;border-radius:2px;display:inline-block}
 
-/* Parts & books */
-.parts{display:grid;gap:3rem}
-.part{display:grid;grid-template-columns:9rem minmax(0,1fr);gap:2rem}
-.part-tag{display:grid;gap:.3rem;align-content:start;position:sticky;top:calc(env(safe-area-inset-top,0px) + 1rem);align-self:start}
-.part-tag .range{font-family:var(--display);font-size:1.6rem;font-weight:600;color:var(--garnet);line-height:1}
-.part-tag p{font-size:.9rem;color:var(--ink-soft);line-height:1.4}
-.books{display:grid;gap:0;border-top:1px solid var(--ink)}
-details.book{border-bottom:1px solid var(--rule)}
-details.book>summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:4rem minmax(0,1fr) auto;gap:1rem;align-items:baseline;padding:1rem .25rem}
-details.book>summary::-webkit-details-marker{display:none}
-details.book>summary:hover{background:var(--garnet-soft)}
-.bnum{font-family:var(--display);font-size:1.5rem;font-weight:700;color:var(--garnet);font-variant-numeric:lining-nums}
-.btitle{font-family:var(--display);font-size:1.45rem;font-weight:600;line-height:1.15}
-.bmeta{font-family:var(--mono);font-size:.75rem;color:var(--ink-soft);white-space:nowrap;display:flex;gap:.8rem;align-items:center}
-.bmeta .chev{transition:transform .2s ease;display:inline-block}
-details[open] .chev{transform:rotate(90deg)}
-ol.qs{list-style:none;margin:0;padding:0 .25rem 1.25rem 5rem;display:grid;gap:.15rem}
-ol.qs li{display:grid;grid-template-columns:3.4rem minmax(0,1fr) 3rem;gap:.75rem;font-size:.98rem;line-height:1.4;padding:.3rem 0;border-bottom:1px dotted var(--rule)}
-ol.qs .qn{font-family:var(--mono);font-size:.78rem;color:var(--garnet);padding-top:.15rem}
-ol.qs .pg{font-family:var(--mono);font-size:.78rem;color:var(--ink-soft);text-align:right;padding-top:.15rem;font-variant-numeric:tabular-nums}
-.toolbar{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;margin-bottom:1.75rem;margin-left:11rem}
-.toolbar input{flex:1 1 16rem;min-width:0;font:inherit;font-size:1rem;padding:.6rem .8rem;border:1px solid var(--rule);background:var(--leaf);color:var(--ink);border-radius:2px}
-button.btn{font-family:var(--mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;padding:.6rem .9rem;border:1px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;border-radius:2px}
-button.btn:hover{background:var(--ink);color:var(--stone)}
-.count{font-family:var(--mono);font-size:.75rem;color:var(--ink-soft)}
-mark{background:var(--garnet-soft);color:inherit;padding:0 .1em}
-.back{font-family:var(--mono);font-size:.78rem;color:var(--ink-soft);display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;margin-top:1.5rem;padding-left:4.25rem}
+/* Article reader */
+.reader{display:grid;grid-template-columns:13rem minmax(0,1fr);border:1px solid var(--rule);background:var(--leaf);box-shadow:0 24px 48px -32px rgba(0,0,0,.35)}
+.steps{display:grid;align-content:start;border-right:1px solid var(--rule)}
+.steps button{all:unset;cursor:pointer;display:grid;grid-template-columns:1.8rem minmax(0,1fr);gap:.6rem;align-items:baseline;padding:1rem 1.1rem;border-bottom:1px solid var(--rule);position:relative;transition:background .2s}
+.steps button:last-child{border-bottom:0}
+.steps button .n{font-family:var(--mono);font-size:.72rem;color:var(--ink-soft)}
+.steps button .t{font-family:var(--display);font-size:1.25rem;font-weight:600;line-height:1.1}
+.steps button .d{grid-column:2;font-size:.8rem;color:var(--ink-soft);line-height:1.3}
+.steps button:hover{background:var(--garnet-soft)}
+.steps button[aria-selected="true"]{background:var(--stone)}
+.steps button[aria-selected="true"]::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--garnet)}
+.steps button[aria-selected="true"] .n,.steps button[aria-selected="true"] .t{color:var(--garnet)}
+.steps button:focus-visible{outline:2px solid var(--garnet);outline-offset:-2px}
+.pane{padding:2rem 2.2rem;display:grid;gap:1rem;align-content:start;min-width:0;min-height:24rem}
+.pane .where{display:flex;flex-wrap:wrap;gap:.4rem 1rem}
+.pane h3{font-size:1.65rem}
+.pane .txt{display:grid;gap:.9rem;max-width:38rem}
+.pane .txt p{animation:fadein .45s ease both}
+.pane .txt p.obj b,.pane .txt p strong{font-family:var(--display);font-size:1.12em;color:var(--garnet)}
+.pane blockquote{margin:0;padding-left:1.1rem;border-left:2px solid var(--gilt);font-style:italic}
+.pane .nav{display:flex;gap:.6rem;margin-top:.6rem;flex-wrap:wrap}
+@keyframes fadein{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 
-/* Record */
-.record{margin-left:11rem;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2.5rem}
-dl.fields{margin:0;display:grid;grid-template-columns:7rem minmax(0,1fr);border-top:1px solid var(--ink)}
-dl.fields dt,dl.fields dd{margin:0;padding:.55rem 0;border-bottom:1px solid var(--rule)}
-dl.fields dt{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);padding-top:.75rem}
+/* Contents */
+.toolbar{display:flex;flex-wrap:wrap;gap:.7rem;align-items:center;margin-bottom:1.1rem}
+.search{flex:1 1 18rem;min-width:0;position:relative}
+.search input{width:100%;font:inherit;font-size:1rem;padding:.75rem .9rem .75rem 2.5rem;border:1px solid var(--rule);background:var(--leaf);color:var(--ink);border-radius:2px;transition:border-color .2s,box-shadow .2s}
+.search input:focus{outline:none;border-color:var(--garnet);box-shadow:0 0 0 3px var(--garnet-soft)}
+.search svg{position:absolute;left:.85rem;top:50%;transform:translateY(-50%);width:1rem;height:1rem;stroke:var(--ink-soft)}
+.chips{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:2rem;align-items:center}
+.chip{all:unset;cursor:pointer;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;padding:.4rem .75rem;border:1px solid var(--rule);border-radius:999px;color:var(--ink-soft);display:inline-flex;gap:.45rem;align-items:center;transition:all .2s}
+.chip i{width:.55rem;height:.55rem;border-radius:50%}
+.chip:hover{border-color:var(--ink);color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--stone)}
+.chip:focus-visible{outline:2px solid var(--garnet);outline-offset:2px}
+.count{font-family:var(--mono);font-size:.74rem;color:var(--ink-soft);margin-left:auto}
+.parts{display:grid;gap:3.2rem}
+.part{display:grid;grid-template-columns:10rem minmax(0,1fr);gap:2rem}
+.part-tag{display:grid;gap:.35rem;align-content:start;position:sticky;top:5.5rem;align-self:start}
+.part-tag .range{font-family:var(--display);font-size:1.9rem;font-weight:700;line-height:1;color:var(--pc)}
+.part-tag h3{font-size:1.3rem}
+.part-tag p{font-size:.88rem;color:var(--ink-soft);line-height:1.4}
+.books{border-top:2px solid var(--pc)}
+details.bk{border-bottom:1px solid var(--rule);transition:background .2s}
+details.bk[open]{background:var(--leaf)}
+details.bk>summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:4.2rem minmax(0,1fr) auto;gap:1rem;align-items:center;padding:1.05rem .6rem;position:relative}
+details.bk>summary::-webkit-details-marker{display:none}
+details.bk>summary::before{content:"";position:absolute;left:0;top:0;bottom:0;width:0;background:var(--pc);transition:width .25s}
+details.bk>summary:hover::before,details.bk[open]>summary::before{width:3px}
+.bnum{font-family:var(--display);font-size:1.6rem;font-weight:700;color:var(--pc);font-variant-numeric:lining-nums;transition:transform .25s}
+details.bk>summary:hover .bnum{transform:translateX(4px)}
+.btitle{font-family:var(--display);font-size:1.5rem;font-weight:600;line-height:1.15}
+.bmeta{font-family:var(--mono);font-size:.72rem;color:var(--ink-soft);white-space:nowrap;display:flex;gap:.8rem;align-items:center}
+.span{display:block;width:4.5rem;height:4px;background:var(--rule);border-radius:2px;position:relative;overflow:hidden}
+.span i{position:absolute;top:0;bottom:0;background:var(--pc);border-radius:2px}
+.chev{width:1.4rem;height:1.4rem;border:1px solid var(--rule);border-radius:50%;display:grid;place-items:center;transition:transform .25s,background .2s,border-color .2s;font-size:.9rem;line-height:1}
+details[open] .chev{transform:rotate(90deg);background:var(--pc);border-color:var(--pc);color:var(--leaf)}
+ol.qs{list-style:none;margin:0;padding:0 .6rem 1.4rem 5.8rem;display:grid}
+ol.qs li{display:grid;grid-template-columns:3.6rem minmax(0,1fr) 3rem;gap:.8rem;font-size:.98rem;line-height:1.42;padding:.45rem .3rem;border-bottom:1px dotted var(--rule);transition:background .15s}
+ol.qs li:hover{background:var(--garnet-soft)}
+ol.qs .qn{font-family:var(--mono);font-size:.76rem;color:var(--pc);padding-top:.15rem}
+ol.qs .pg{font-family:var(--mono);font-size:.76rem;color:var(--ink-soft);text-align:right;padding-top:.15rem;font-variant-numeric:tabular-nums}
+mark{background:var(--garnet-soft);color:inherit;padding:0 .1em;border-radius:2px}
+.back{font-family:var(--mono);font-size:.76rem;color:var(--ink-soft);display:flex;flex-wrap:wrap;gap:.4rem 1.6rem;margin-top:2rem}
+.empty{font-size:1rem;color:var(--ink-soft);padding:1.5rem 0}
+
+/* Credit */
+.record{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2.5rem}
+dl.fields{margin:0;display:grid;grid-template-columns:7.5rem minmax(0,1fr);border-top:2px solid var(--ink)}
+dl.fields dt,dl.fields dd{margin:0;padding:.65rem 0;border-bottom:1px solid var(--rule)}
+dl.fields dt{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);padding-top:.85rem}
 dl.fields dd{font-size:.98rem}
 code{font-family:var(--mono);font-size:.85em}
-.cite{background:var(--leaf);border:1px solid var(--rule);padding:1.25rem;display:grid;gap:.9rem;align-content:start}
-.cite blockquote{margin:0;font-size:1.02rem;line-height:1.55}
+.cite{background:var(--leaf);border:1px solid var(--rule);padding:1.5rem;display:grid;gap:1rem;align-content:start;position:relative}
+.cite::before{content:"\201C";position:absolute;right:1rem;top:-.6rem;font-family:var(--display);font-size:6rem;line-height:1;color:var(--garnet-soft)}
+.cite blockquote{margin:0;font-size:1.08rem;line-height:1.55;position:relative}
 .tags{display:flex;flex-wrap:wrap;gap:.4rem}
-.tags span{font-family:var(--mono);font-size:.74rem;border:1px solid var(--rule);padding:.2rem .5rem;border-radius:2px;background:var(--stone)}
-.note{font-size:.88rem;color:var(--ink-soft);line-height:1.5}
+.tags span{font-family:var(--mono);font-size:.72rem;border:1px solid var(--rule);padding:.22rem .55rem;border-radius:2px;background:var(--stone)}
 
-footer{padding-block:2.5rem 3.5rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
-footer p{font-size:.9rem;color:var(--ink-soft)}
+/* Footer */
+footer.colophon{background:var(--cover);color:#EFE6D6;padding-block:4.5rem 3rem;position:relative;overflow:hidden}
+footer.colophon::before{content:"Apexism";position:absolute;left:50%;bottom:-3.5rem;transform:translateX(-50%);font-family:var(--display);font-weight:700;font-size:clamp(6rem,22vw,16rem);line-height:1;color:transparent;-webkit-text-stroke:1px rgba(230,201,138,.18);white-space:nowrap;pointer-events:none}
+footer .wrap{position:relative;display:grid;gap:3rem}
+.f-top{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:3rem}
+.f-title{font-family:var(--display);font-size:clamp(2rem,4.5vw,2.9rem);font-weight:600;line-height:1.02;color:#FFF7EA}
+.f-title em{display:block;color:var(--cover-gilt);font-weight:500;font-size:.62em;margin-top:.4rem}
+.f-lede{margin-top:1.2rem;font-size:1.05rem;line-height:1.6;color:#E3D6C3;max-width:34rem}
+.f-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem;align-content:start}
+.f-cols h4{margin:0 0 .7rem;font-family:var(--mono);font-size:.7rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--cover-gilt)}
+.f-cols ul{list-style:none;margin:0;padding:0;display:grid;gap:.45rem}
+.f-cols a{color:#EFE6D6;text-decoration:none;font-size:.98rem;border-bottom:1px solid transparent;transition:border-color .2s,color .2s}
+.f-cols a:hover{color:#fff;border-color:var(--cover-gilt)}
+.f-legal{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem;border-top:1px solid rgba(230,201,138,.3);padding-top:2rem}
+.f-legal h4{margin:0 0 .5rem;font-family:var(--display);font-size:1.2rem;font-weight:600;color:#FFF7EA}
+.f-legal p{font-size:.9rem;line-height:1.6;color:#D9CBB6}
+.f-legal a{color:var(--cover-gilt)}
+.f-base{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;color:#C9B9A2;border-top:1px solid rgba(230,201,138,.3);padding-top:1.4rem;padding-bottom:env(safe-area-inset-bottom,0px)}
+.f-base a{color:#C9B9A2}
+.toTop{all:unset;cursor:pointer;color:var(--cover-gilt)}
+.toTop:hover{text-decoration:underline}
 
-@media (max-width:820px){
-  header.hero{grid-template-columns:1fr;gap:2rem;padding-block:3rem 2rem}
-  .colophon{grid-template-columns:repeat(2,minmax(0,1fr))}
+/* Reveal: visible at rest, gently lifted in when JS marks it */
+.rv{transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.rv.pre{opacity:0;transform:translateY(24px)}
+
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:1fr;gap:2.5rem}
+  .stage{order:-1}
+  .book{width:12rem}
   .sec-head,.part{grid-template-columns:1fr;gap:.6rem}
-  .body-col,.method,.toolbar,.record{margin-left:0}
+  .indent{margin-left:0}
+  .about-grid{grid-template-columns:1fr;gap:2rem}
+  .pull{position:static}
   .part-tag{position:static}
-  .method{grid-template-columns:1fr}
-  .method div{border-right:0;border-bottom:1px solid var(--rule)}
-  .method div:last-child{border-bottom:0}
-  .record{grid-template-columns:1fr}
-  ol.qs{padding-left:.25rem}
-  .back{padding-left:0}
+  .record,.f-top{grid-template-columns:1fr}
+  .f-legal{grid-template-columns:1fr}
+  .reader{grid-template-columns:1fr}
+  .steps{grid-template-columns:repeat(5,minmax(0,1fr));border-right:0;border-bottom:1px solid var(--rule)}
+  .steps button{grid-template-columns:1fr;border-bottom:0;border-right:1px solid var(--rule);padding:.8rem .5rem;text-align:center;gap:.15rem}
+  .steps button:last-child{border-right:0}
+  .steps button .d{display:none}
+  .steps button .t{font-size:1rem}
+  .steps button[aria-selected="true"]::before{left:0;right:0;top:auto;bottom:0;width:auto;height:3px}
+  .pane{padding:1.5rem 1.2rem;min-height:0}
+  ol.qs{padding-left:.6rem}
+  nav.top ul{display:none}
+  .figures{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .figures div:nth-child(2){border-right:0}
+  .figures div:nth-child(-n+2){border-bottom:1px solid var(--rule)}
+  .vbar button span{display:none}
 }
-@media (max-width:480px){
-  details.book>summary{grid-template-columns:2.6rem minmax(0,1fr);}
+@media (max-width:520px){
+  details.bk>summary{grid-template-columns:2.8rem minmax(0,1fr)}
   .bmeta{grid-column:2}
-  ol.qs li{grid-template-columns:2.8rem minmax(0,1fr) 2.6rem;gap:.5rem}
+  ol.qs li{grid-template-columns:2.9rem minmax(0,1fr) 2.6rem;gap:.5rem}
+  .f-cols{grid-template-columns:1fr 1fr}
+  .count{margin-left:0;width:100%}
 }
-@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .rv.pre{opacity:1;transform:none}
+}
 </style>
 </head>
 <body>
 
-
-<div class="wrap">
-<header class="hero">
-  <div>
-    <p class="label">Goatis Source Edition &middot; First Edition &middot; November 2026</p>
-    <h1 style="margin-top:1.2rem">The Apexist Summa<em>Goatis Source Edition</em></h1>
-    <p class="sub">Nineteen Books on Natural Living and the Case for Life Without Gods</p>
-    <p class="by">Jesse Anderson</p>
+<nav class="top gutter" aria-label="Sections">
+  <div class="wrap">
+    <a class="mark" href="#top">Apexist <span>Summa</span></a>
+    <ul>
+      <li><a href="#about">The work</a></li>
+      <li><a href="#volume">The volume</a></li>
+      <li><a href="#method">Read an Article</a></li>
+      <li><a href="#contents">Contents</a></li>
+      <li><a href="#credit">Credit</a></li>
+    </ul>
   </div>
-  <div class="colophon" aria-label="The work in figures">
-    <div><b>19</b><span>Books</span></div>
-    <div><b>165</b><span>formal Questions</span></div>
-    <div><b>1,357</b><span>pages, with source register and index</span></div>
-    <div><b>CC BY 4.0</b><span>original text and arrangement</span></div>
+  <div class="progress" id="progress"></div>
+</nav>
+
+<header class="hero gutter" id="top">
+  <div class="ghost" aria-hidden="true">XIX</div>
+  <div class="wrap">
+    <div>
+      <p class="label eyebrow">Goatis Source Edition &middot; First Edition &middot; November 2026</p>
+      <h1><span class="w">The</span> <span class="w">Apexist</span> <span class="w">Summa</span><em>Goatis Source Edition</em></h1>
+      <p class="sub">Nineteen Books on Natural Living and the Case for Life Without Gods</p>
+      <div class="byline"><span class="label">By</span><b>Jesse Anderson</b></div>
+      <div class="ctas">
+        <a class="btn solid" href="#contents">Explore the contents <span class="arr">&rarr;</span></a>
+        <a class="btn" href="#method">Read an Article</a>
+      </div>
+    </div>
+    <div class="stage" aria-hidden="true">
+      <div class="book" id="book">
+        <div class="back"></div>
+        <div class="spine"></div>
+        <div class="pages"></div>
+        <div class="face">
+          <span class="cv-top">Goatis Source Edition</span>
+          <div>
+            <div class="cv-title">The Apexist Summa<i>Nineteen Books</i></div>
+          </div>
+          <svg class="cv-orn" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="32" cy="32" r="22"/><path d="M32 10 L45 54 L19 54 Z"/><circle cx="32" cy="38" r="5"/><path d="M8 32h6M50 32h6"/></svg>
+          <span class="cv-auth">Jesse Anderson</span>
+        </div>
+      </div>
+      <div class="shadow"></div>
+    </div>
   </div>
 </header>
 
+<div class="gutter">
+<div class="wrap">
+  <div class="figures rv" aria-label="The work in figures">
+    <div><b data-count="19">19</b><span>Books, from method to the question of God</span></div>
+    <div><b data-count="165">165</b><span>formal Questions, argued Article by Article</span></div>
+    <div><b data-count="1357" data-sep="1">1,357</b><span>pages, with source register and index</span></div>
+    <div><b>CC&nbsp;BY</b><span>free to share and adapt, with credit</span></div>
+  </div>
+
 <section id="about">
-  <div class="sec-head"><span class="label">The work</span><h2>A systematic defense of a natural life</h2></div>
-  <div class="body-col">
-    <p class="lede"><strong>The Apexist Summa</strong> is a comprehensive philosophical examination, systematization, and defense of the worldview of Goatis, formerly known as Sv3rige. Jesse Anderson develops Goatis&rsquo;s teachings into an extensive philosophical framework addressing the foundations of knowledge, the nature of reality, human existence, morality, health, society, and religion.</p>
-    <p>The work begins with epistemology and metaphysics: the relationship between sensory experience, reason, knowledge, existence, causation, and the natural world. It then develops an account of human nature and practical judgment, exploring instinct, survival, reproduction, moral nihilism, personal freedom, natural hierarchy, and the purposes of human life.</p>
-    <p>Later books address nutrition, raw animal foods, physical development, exercise, relationships, family, medicine, scientific authority, technology, political institutions, education, and modern civilization. Throughout, the Summa examines Goatis&rsquo;s documented positions, including controversial historical claims, while distinguishing his recorded statements from the author&rsquo;s independent philosophical arguments and the available empirical evidence.</p>
-    <p>The concluding four books investigate the existence of God. Drawing on classical and contemporary philosophy, they examine the cosmological arguments, Aquinas&rsquo;s Five Ways, divine simplicity, contingency, the principle of sufficient reason, consciousness, moral arguments, fine-tuning, religious experience, miracles, divine hiddenness, and the problem of evil, and build a sustained case for naturalism and life without gods.</p>
+  <div class="sec-head rv"><span class="label">The work</span><h2>A complete philosophy of the <em>natural life</em>, argued from the ground up</h2></div>
+  <div class="about-grid indent">
+    <div class="body-col rv">
+      <p class="lede"><strong>The Apexist Summa</strong> is a comprehensive examination, systematization and defense of the worldview of Goatis, formerly known as Sv3rige. Jesse Anderson takes Goatis&rsquo;s teaching and builds it into a full philosophical framework: knowledge and reality, human nature and morality, health and society, and religion.</p>
+      <p>It opens with the oldest questions in philosophy. How do the senses, reason and knowledge relate? What exists, and what causes it? From there it develops an account of human nature and practical judgment: instinct, survival, reproduction, moral nihilism, personal freedom, natural hierarchy and the purpose of a human life.</p>
+      <p>The middle books turn to how to live. Nutrition and raw animal foods, the body and exercise, relationships and family, medicine and scientific authority, technology, the state, schooling and modern civilization. Throughout, Goatis&rsquo;s recorded statements, including his controversial historical claims, are kept distinct from the author&rsquo;s own arguments and from the empirical evidence.</p>
+      <p>The last four books take on the existence of God. Aquinas&rsquo;s Five Ways, the cosmological arguments, divine simplicity, contingency and sufficient reason, consciousness, morality, fine-tuning, religious experience, miracles, divine hiddenness and the problem of evil are each examined in turn. Together they make a sustained case for naturalism and for life without gods.</p>
+      <div class="topics" aria-label="Subjects">
+        <span>Epistemology</span><span>Metaphysics</span><span>Ethics</span><span>Nutrition</span><span>The body</span><span>Family</span><span>Society</span><span>Philosophy of religion</span><span>Naturalism</span>
+      </div>
+    </div>
+    <aside class="pull rv">
+      <q>What exists is what we sense.</q>
+      <p>Goatis, <i>The 10 Biggest Christian Lies</i>, 9 June 2025. The standard on which the whole Summa is built.</p>
+    </aside>
+  </div>
+</section>
+
+<section id="volume">
+  <div class="sec-head rv"><span class="label">The volume</span><h2>Nineteen Books, <em>to scale</em></h2></div>
+  <div class="indent vmap rv">
+    <p class="body-col" style="max-width:40rem">Each block is one Book, sized by its page count. The argument moves from how we know, to how to live, to whether any god exists. Select a Book to open it in the contents.</p>
+    <div class="vbar" id="vbar" role="list"></div>
+    <div class="vscale"><span>p. 15</span><span>p. 700</span><span>p. 1,337</span></div>
+    <div class="vinfo" id="vinfo" aria-live="polite"><span class="label">Hover or tap a Book</span></div>
+    <div class="legend" id="legend"></div>
   </div>
 </section>
 
 <section id="method">
-  <div class="sec-head"><span class="label">The method</span><h2>How each Article proceeds</h2></div>
-  <div class="body-col" style="margin-bottom:1.75rem">
-    <p>The Summa follows the form of classical scholastic philosophy. The aim is to investigate the foundations of each teaching and construct the strongest available arguments in its defense, not merely to summarize it.</p>
-  </div>
-  <div class="method">
-    <div><span class="label">1</span><h3>Objections</h3><p>The opposing position, stated at full strength.</p></div>
-    <div><span class="label">2</span><h3>Source</h3><p>Goatis&rsquo;s recorded words, with video title and date.</p></div>
-    <div><span class="label">3</span><h3>Answer</h3><p>The developed argument for the teaching.</p></div>
-    <div><span class="label">4</span><h3>Replies</h3><p>Each objection answered in turn.</p></div>
-    <div><span class="label">5</span><h3>Conclusion</h3><p>The reasoned verdict of the Question.</p></div>
-  </div>
-</section>
-
-<section id="contents">
-  <div class="sec-head"><span class="label">Contents</span><h2>Nineteen Books, 165 Questions</h2></div>
-  <div class="toolbar">
-    <label for="q" class="label" style="position:absolute;left:-9999px">Search the Questions</label>
-    <input id="q" type="search" placeholder="Search the Questions, e.g. Kalam, raw milk, attraction">
-    <button class="btn" id="toggle" type="button">Open all</button>
-    <span class="count" id="count" aria-live="polite"></span>
-  </div>
-  <div class="parts" id="parts"></div>
-  <p class="back"><span>Health and Evidence Notes &middot; p. 1338</span><span>Source register &middot; p. 1341</span><span>Index &middot; p. 1357</span></p>
-</section>
-
-<section id="record">
-  <div class="sec-head"><span class="label">Archive record</span><h2>Edition and citation</h2></div>
-  <div class="record">
-    <dl class="fields">
-      <dt>Title</dt><dd>The Apexist Summa: Goatis Source Edition</dd>
-      <dt>Creator</dt><dd>Jesse Anderson</dd>
-      <dt>Edition</dt><dd>Goatis Source Edition, First Edition</dd>
-      <dt>Date</dt><dd>November 2026</dd>
-      <dt>Language</dt><dd>English</dd>
-      <dt>Collection</dt><dd>Community texts</dd>
-      <dt>Identifier</dt><dd><code>apexist-summa-revised</code></dd>
-      <dt>License</dt><dd>Creative Commons Attribution 4.0 International (CC BY 4.0)</dd>
-    </dl>
-    <div class="cite">
-      <span class="label">How to credit this book</span>
-      <blockquote id="citation">Jesse Anderson, <i>The Apexist Summa: Goatis Source Edition</i>, first edition, November 2026. Licensed under CC BY 4.0.</blockquote>
-      <div><button class="btn" type="button" data-copy="citation">Copy citation</button></div>
-      <span class="label" style="margin-top:.4rem">Subjects</span>
-      <div class="tags" id="tags"></div>
-      <div><button class="btn" type="button" data-copy="tagline">Copy subject line</button></div>
-      <p class="note">&copy; 2026 Jesse Anderson. Original text and arrangement licensed under CC BY 4.0. Quotations from Goatis and other authors, and other third-party material, are excluded from that license.</p>
+  <div class="sec-head rv"><span class="label">The method</span><h2>Read an Article the <em>scholastic</em> way</h2></div>
+  <div class="indent">
+    <p class="body-col rv" style="margin-bottom:2rem">Every Article follows the form of the medieval Summas. The strongest objections come first, then Goatis&rsquo;s own words, then the argument, then a reply to each objection. Step through the opening Article of the book below.</p>
+    <div class="reader rv">
+      <div class="steps" role="tablist" aria-label="Parts of an Article" id="steps"></div>
+      <div class="pane" role="tabpanel" id="pane" aria-live="polite"></div>
     </div>
   </div>
 </section>
 
-<footer>
-  <p>The Apexist Summa &middot; Jesse Anderson &middot; 2026</p>
-  <p><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></p>
-</footer>
+<section id="contents">
+  <div class="sec-head rv"><span class="label">Contents</span><h2>Every Book, <em>every Question</em></h2></div>
+  <div class="toolbar">
+    <label for="q" class="sr">Search the Questions</label>
+    <div class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="Search 165 Questions: Kalam, raw milk, attraction, money" autocomplete="off">
+    </div>
+    <button class="btn sm" id="toggle" type="button">Open all</button>
+  </div>
+  <div class="chips" id="chips" role="group" aria-label="Filter by part"></div>
+  <div class="parts" id="parts"></div>
+  <p class="back"><span>Health and Evidence Notes &middot; p. 1338</span><span>Source register &middot; p. 1341</span><span>Index &middot; p. 1357</span></p>
+</section>
+
+<section id="credit" style="border-bottom:0">
+  <div class="sec-head rv"><span class="label">Credit</span><h2>Edition and <em>citation</em></h2></div>
+  <div class="record indent rv">
+    <dl class="fields">
+      <dt>Title</dt><dd>The Apexist Summa: Goatis Source Edition</dd>
+      <dt>Author</dt><dd>Jesse Anderson</dd>
+      <dt>Edition</dt><dd>Goatis Source Edition, First Edition</dd>
+      <dt>Published</dt><dd>November 2026</dd>
+      <dt>Language</dt><dd>English</dd>
+      <dt>Length</dt><dd>19 Books, 165 Questions, 1,357 pages</dd>
+      <dt>Identifier</dt><dd><code>apexist-summa-revised</code></dd>
+      <dt>License</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a> for the original text and arrangement</dd>
+    </dl>
+    <div class="cite">
+      <span class="label">How to credit this book</span>
+      <blockquote id="citation">Jesse Anderson, <i>The Apexist Summa: Goatis Source Edition</i>, first edition, November 2026. Licensed under CC BY 4.0.</blockquote>
+      <div><button class="btn sm" type="button" data-copy="citation">Copy citation</button></div>
+      <span class="label" style="margin-top:.4rem">Subjects</span>
+      <div class="tags" id="tags"></div>
+      <div><button class="btn sm" type="button" data-copy="tagline">Copy subject line</button></div>
+    </div>
+  </div>
+</section>
 </div>
+</div>
+
+<footer class="colophon gutter">
+  <div class="wrap">
+    <div class="f-top">
+      <div>
+        <p class="f-title">The Apexist Summa<em>Goatis Source Edition</em></p>
+        <p class="f-lede">A philosophy of natural living in nineteen Books, written by Jesse Anderson. It begins with what the senses can teach, follows that standard through food, the body, family and society, and ends with the question of God.</p>
+      </div>
+      <div class="f-cols">
+        <div>
+          <h4>On this page</h4>
+          <ul><li><a href="#about">The work</a></li><li><a href="#volume">The volume</a></li><li><a href="#method">Read an Article</a></li><li><a href="#contents">Contents</a></li><li><a href="#credit">Credit</a></li></ul>
+        </div>
+        <div>
+          <h4>The four parts</h4>
+          <ul><li><a href="#contents" data-part="0">Foundations</a></li><li><a href="#contents" data-part="1">The Primal Life</a></li><li><a href="#contents" data-part="2">The Teaching Applied</a></li><li><a href="#contents" data-part="3">The Question of God</a></li></ul>
+        </div>
+      </div>
+    </div>
+    <div class="f-legal">
+      <div>
+        <h4>Copyright</h4>
+        <p>&copy; 2026 Jesse Anderson. All original text and its arrangement are the work of the author. First edition, November 2026.</p>
+      </div>
+      <div>
+        <h4>Free to share</h4>
+        <p>The original text is released under the <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">Creative Commons Attribution 4.0 International License</a>. You may copy, quote, translate and adapt it for any purpose, including commercially. Credit the author, name the book and the license, and note any changes you made.</p>
+      </div>
+      <div>
+        <h4>What the license excludes</h4>
+        <p>Quotations from Goatis and other authors, and all other third-party material, belong to their owners and are not covered by this license. The book presents a philosophical case and is not medical advice. Its Health and Evidence Notes begin on page 1338.</p>
+      </div>
+    </div>
+    <div class="f-base">
+      <span>&copy; 2026 Jesse Anderson &middot; CC BY 4.0</span>
+      <span>Set in Cormorant Garamond, Newsreader and IBM Plex Mono</span>
+      <button class="toTop" type="button" id="toTop">Back to the top &uarr;</button>
+    </div>
+  </div>
+</footer>
 <span id="tagline" hidden>Apexism, Goatis, Sv3rige, philosophy, naturalism, atheism, epistemology, metaphysics, ethics, philosophy of religion</span>
 
 <script>
 const BOOKS = [{"n":"I","t":"Knowledge and Method","p":15,"q":[["1","Whether knowledge begins with the senses",16],["2","Whether reasoning can reach beyond what a person has seen for himself",21],["3","Whether testimony and experts can pass on knowledge",27],["4","Whether real science can be told apart from the prestige of institutions",31],["5","Whether instinct and the body’s signals are reliable guides",36],["6","Whether a favored teacher must be checked as strictly as his opponents",41],["7","Whether getting better yourself proves a cause that holds for everyone",46],["8","Whether a consistent teaching must allow for correction",51]]},{"n":"II","t":"Reality and Nature","p":58,"q":[["9","The meanings of nature",59],["10","Material reality",67],["11","Form and organization",76],["12","Actuality and potentiality",81],["13","Functions without a designer",88],["14","Artifacts and natural needs",92],["15","Whether life without gods has better support than belief that a god rules the world",100],["16","Acting for reasons in a world of causes",104]]},{"n":"III","t":"Human Nature and Success","p":116,"q":[["17","A shared human nature",118],["18","Strength in living nature",123],["19","Natural desires and the purpose of human life",129],["20","Instinct and conditioning",133],["21","Competition and cooperation",138],["22","Reason and learned skill",146],["23","The many measures of success",154],["24","Human purpose and a complete life",160]]},{"n":"IV","t":"Natural Law and Practical Judgment","p":170,"q":[["25","The aims of everyday judgment and their authority",171],["26","Facts of nature and moral claims and reasons that depend on one’s aims",175],["27","How the body works and natural means",185],["28","Instinct and judgment and life without self-control",189],["29","Strength and fearlessness and power",194],["30","Empathy and compassion and what they naturally depend on",198],["31","Loyalty and commitment and dependence",203],["32","Choosing between competing outcomes",209]]},{"n":"V","t":"Animal Nourishment and Raw Food","p":218,"q":[["33","Whether animal foods deserve the central place in what we eat",219],["34","Whether the fact that animal food is enough means one must eat only animal food",224],["35","Whether raw food is better than cooked food",228],["36","Whether raw milk and butter and fermented dairy deserve one judgment",237],["37","Whether the rich nutrients in organs call for a limit on eating them",240],["38","Whether the chemicals plants use to defend themselves justify rejecting every plant food",246],["39","Whole foods and the burden on supplements",250],["40","Judging a diet over time",254]]},{"n":"VI","t":"The Practice of a Primal Life","p":260,"q":[["41","Whether the natural life requires one routine for everyone",261],["42","Whether a primal life rejects formal weight training",266],["43","Whether comfort or hardship is the proper guide to living",271],["44","Whether one’s surroundings matter more than constant self-improvement",275],["45","Whether bodily care should begin with the life of the body",279],["46","Whether a primal life can use technology without contradicting itself",283],["47","Whether work and money can help a person be independent",289],["48","Whether limits and dependence defeat the natural ideal",295]]},{"n":"VII","t":"Competition Hierarchy and Community","p":301,"q":[["49","Whether community belongs to a natural human life",303],["50","Whether differences in ability justify hierarchy",307],["51","Whether possessing power establishes a right to rule",311],["52","Whether honesty and self-restraint are needed for a strong group",315],["53","Whether conflict and self-defense have limits set by principle",319],["54","Whether care for dependents follows from the inborn purpose",322],["55","Whether a strong community can permit dissent and departure",329],["56","Whether a teaching can keep its force in practice",332]]},{"n":"VIII","t":"Rival Frameworks and the Cumulative Case","p":342,"q":[["57","Whether natural excellence needs Christianity and natural law to complete it",343],["58","Whether secular humanism leaves anything distinct for the Apexist way of life to do",347],["59","Whether the strongest vegan arguments defeat a life built around animal food",350],["60","Whether similar diets improve the case for a natural life",353],["61","How the Summa puts Goatis’s teachings in order",356],["62","Whether criticism of faith in science justifies setting scientific findings aside",361],["63","Whether enhancing a person with technology helps or hinders the natural ideal",368],["64","Whether the case built up across the Books shows that Apexism can be defended",375],["65","Whether the practical advantages of religion defeat life without gods",379]]},{"n":"IX","t":"Men Women and Attraction","p":386,"q":[["66","Whether attraction follows looks",387],["67","Whether the natures of men and women are inborn",395],["68","Whether dating advice and the pills can make a man desirable",402],["69","Whether sleeping around pornography and paid attention serve nature",409],["70","Whether a natural partnership needs marriage",416],["71","Whether wanting children belongs to every man and woman",422]]},{"n":"X","t":"The Body Looks Aging and Sport","p":432,"q":[["72","Whether looks show health",433],["73","Whether teeth and faces are inherited or made by food",441],["74","Whether surgery hair and adornment improve the natural body",448],["75","Whether steroids and bodybuilding build a body",455],["76","Whether sport and endurance and cold make a man strong",464],["77","Whether longevity can be bought",471]]},{"n":"XI","t":"Substances Medicine and Modern Food","p":478,"q":[["78","Whether alcohol tobacco cannabis psychedelics and coffee have a place in a natural life",479],["79","Whether salt sugar seed oils and spices are food",487],["80","Whether doctors and modern medicine heal",494],["81","Whether fasting and extreme diets are natural",503],["82","Whether the carnivore and other diet movements follow nature",509],["83","Whether children should eat what modern parents feed them",515]]},{"n":"XII","t":"The Matrix Slavery Money School and State","p":524,"q":[["84","Whether modern life is enslavement",525],["85","Whether money wealth and work are real",534],["86","Whether schools educate",541],["87","Whether government law and police have real authority",546],["88","Whether names roles and words show what is real",552],["89","Whether screens games social media and AI belong in a natural life",559],["90","Whether some places are better to live than others",565]]},{"n":"XIII","t":"The Natural Human","p":573,"q":[["91","Whether natural peoples show the natural life",574],["92","Whether a natural day can be lived today",584],["93","Whether happiness and depression come from the way one lives",592],["94","Whether the body knows what is good",601],["95","Whether there is a natural hierarchy of the Earth",608]]},{"n":"XIV","t":"Goatis Jesus and the Religions","p":617,"q":[["96","Whether Jesus taught the natural life",618],["97","Whether Christianity is what Jesus taught",626],["98","Whether new spiritual movements escape religion",633],["99","Whether Goatis’s teaching is itself a religion",639]]},{"n":"XV","t":"Veganism and the Plant Diet","p":650,"q":[["100","Whether plants are human food",651],["101","Whether bread grains beans and starch are food",660],["102","Whether a vegan diet can nourish a human",667],["103","Whether vegans’ cravings and bodies show the truth",674],["104","Whether veganism is ethical",680],["105","Why people become vegan and how they leave",687],["106","Whether health can be read from a body",694]]},{"n":"XVI","t":"The Standard of the Senses","p":703,"q":[["107","Whether what cannot be sensed does not exist",704],["108","Whether experience is the limit of knowledge",716],["109","Whether the word God means anything",727],["110","Whether the one who denies gods must prove it",738],["111","Whether God is being itself and so beyond the senses",749],["112","Whether the senses can be trusted without God",760],["113","Whether faith is a kind of knowledge",772]]},{"n":"XVII","t":"The Classical Proofs Examined","p":789,"q":[["M01","Naturalism and its alternatives",789],["M02","Causes and what keeps things in existence",796],["M03","Necessity and how we know what is possible",804],["M04","The First Way",811],["M05","The Second Way",818],["M06","The Third Way",825],["M07","The Fourth Way",832],["M08","The Fifth Way",838],["M09","Being made of parts and being one",847],["M10","Essence and existence",855],["M11","Abstract truths and the mind of God",866],["M12","The principle of sufficient reason",874],["M13","A real thing that cannot fail to exist",885],["M14","From a necessary foundation to a God who acts",895],["M15","The Kalam argument",903],["M16","Ontological arguments",912],["M17","Divine simplicity and God’s freedom",925],["M18","Divine knowledge and time and being a person",933],["M19","Consciousness and thought and reason",940],["M20","Natural law and reasons for action",953],["M21","Fine-tuning and which explanation fits better",961],["M22","Suffering and a world that does not care",971],["M23","Divine hiddenness and a relationship with God",979],["M24","Testimony and miracles and the evidence against them",988],["M25","The verdict on the classical proofs",997]]},{"n":"XVIII","t":"The Arguments for God Answered","p":1010,"q":[["114","Whether the evidence makes God probable",1011],["115","Whether many weak arguments add up to a strong one",1022],["116","Whether right and wrong require God",1034],["117","Whether desire beauty love and meaning point to God",1048],["118","Whether religious experience shows God",1061],["119","Whether the resurrection of Jesus is established",1073],["120","Whether numbers propositions and possibilities need a divine mind",1085],["121","Whether consciousness colors and flavors need God",1097],["122","Whether the laws of nature and the world’s order need a lawgiver",1108],["123","Whether a necessary being must be a person who chooses",1120],["124","Whether the popular case for Christianity succeeds",1131],["125","Whether believers themselves live as if God exists",1145]]},{"n":"XIX","t":"The Arguments Against God","p":1158,"q":[["126","Whether nature alone is the simpler account",1159],["127","Whether an all-good all-powerful God is consistent with the world he made",1170],["128","Whether pain and pleasure are better explained without God",1183],["129","Whether a loving God would stay hidden",1195],["130","Whether a being can be all-powerful",1206],["131","Whether a being can be all-knowing and free and changeless",1218],["132","Whether a perfect bodiless timeless being can be a person who creates",1230],["133","Whether the many religions tell against each other",1241],["134","Whether religion has a natural origin",1252],["135","Whether scripture bears the marks of God",1264],["136","Whether prayer changes anything",1278],["137","Whether hell and the wager give a reason to believe",1289],["138","Whether the size and age of the world fit a God who made it for man",1302],["139","Whether reports of miracles should ever be believed",1312],["140","Whether the whole case shows that no gods exist",1322]]}];
 const TITLES = {"VII":"Competition, Hierarchy and Community","IX":"Men, Women and Attraction","X":"The Body, Looks, Aging and Sport","XI":"Substances, Medicine and Modern Food","XII":"The Matrix: Slavery, Money, School and State","XIV":"Goatis, Jesus and the Religions"};
 const PARTS = [
-  {range:"I–IV", name:"Foundations", note:"Knowledge, reality, human nature and practical judgment.", from:0, to:4},
-  {range:"V–VIII", name:"The Primal Life", note:"Nourishment, daily practice, community and the cumulative case.", from:4, to:8},
-  {range:"IX–XV", name:"The Teaching Applied", note:"Attraction, the body, medicine, the Matrix, the natural human, religion and veganism.", from:8, to:15},
-  {range:"XVI–XIX", name:"The Question of God", note:"The standard of the senses, the classical proofs and the arguments for and against God.", from:15, to:19}
+  {range:"I–IV", name:"Foundations", note:"Knowledge, reality, human nature and practical judgment.", from:0, to:4, c:"--p1"},
+  {range:"V–VIII", name:"The Primal Life", note:"Nourishment, daily practice, community and the cumulative case.", from:4, to:8, c:"--p2"},
+  {range:"IX–XV", name:"The Teaching Applied", note:"Attraction, the body, medicine, the Matrix, the natural human, religion and veganism.", from:8, to:15, c:"--p3"},
+  {range:"XVI–XIX", name:"The Question of God", note:"The standard of the senses, the classical proofs, and the arguments for and against God.", from:15, to:19, c:"--p4"}
 ];
-const END = 1338;
+const END = 1338, START = BOOKS[0].p;
+const partOf = i => PARTS.findIndex(p => i >= p.from && i < p.to);
+const endOf = i => (i + 1 < BOOKS.length ? BOOKS[i+1].p : END) - 1;
+const titleOf = b => TITLES[b.n] || b.t;
 const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const partsEl = document.getElementById('parts');
 
-function render(term){
-  const t = term.trim().toLowerCase();
+/* Volume map */
+const vbar = document.getElementById('vbar'), vinfo = document.getElementById('vinfo');
+BOOKS.forEach((b, i) => {
+  const btn = document.createElement('button');
+  const pages = endOf(i) - b.p + 1;
+  btn.style.flex = pages + ' 1 0';
+  btn.style.background = `var(${PARTS[partOf(i)].c})`;
+  btn.setAttribute('role','listitem');
+  btn.setAttribute('aria-label', `Book ${b.n}, ${titleOf(b)}, ${pages} pages`);
+  btn.innerHTML = `<span>${b.n}</span>`;
+  const show = () => vinfo.innerHTML = `<span class="label">Book ${b.n} &middot; ${PARTS[partOf(i)].name}</span><b>${esc(titleOf(b))}</b><span class="label">${b.q.length} Questions &middot; pp. ${b.p}&ndash;${endOf(i)} &middot; ${pages} pages</span>`;
+  btn.addEventListener('mouseenter', show); btn.addEventListener('focus', show);
+  btn.addEventListener('click', () => openBook(b.n));
+  vbar.appendChild(btn);
+});
+document.getElementById('legend').innerHTML = PARTS.map(p => `<span><i style="background:var(${p.c})"></i>Books ${p.range} &middot; ${p.name}</span>`).join('');
+
+/* Article reader: Question 1, Article 1 */
+const STEPS = [
+  {t:"Objections", d:"The case against, at full strength", html:`
+    <p class="obj"><strong>Objection 1.</strong> Showing that people get their ideas through the senses explains how they come to believe. It does not show that their beliefs are sound. A prejudice also has a history that can be traced.</p>
+    <p class="obj"><strong>Objection 2.</strong> Kant accepts that knowledge begins with experience but denies that all of it comes from experience. Pointing to the body as the starting point therefore leaves rationalism undefeated.</p>
+    <p class="obj"><strong>Objection 3.</strong> A living body responds to whatever helps it keep going. What keeps a body going and what is true can come apart, so success in dealing with the world cannot by itself set the standard for knowledge.</p>`},
+  {t:"Source", d:"Goatis in his own words", html:`
+    <p>A woman Goatis reviewed said of vegetables that &ldquo;we all know&rdquo; they are good for us. Goatis answers that she speaks &ldquo;as if that&rsquo;s something that our senses tell us that&rsquo;s what knowing is.&rdquo;</p>
+    <blockquote><p>&ldquo;Your senses are literally telling you not to consume it. That&rsquo;s it. That&rsquo;s really the only proof that you would need if human beings would be sane today.&rdquo;</p></blockquote>
+    <p class="label">Good Eatings: Extremely Sick Vegan Needs Urgent Help, 20 June 2020</p>`},
+  {t:"I answer that", d:"The argument itself", html:`
+    <p>The claim that knowledge begins in experience can mean three things: a claim about how a person learns, about what makes a judgment sound, or about what exists. Apexism holds all three, because Goatis does.</p>
+    <p>Suppose two people disagree about whether a particular door stands open. How consistent their words are does not decide it. Looking does. It puts the observer where one answer is favored over the other, because what he sees is the door&rsquo;s actual position. A strong feeling cannot do that.</p>
+    <p>An account of the world that no experience could ever count against has lost the only way of telling being right from merely staying consistent.</p>`},
+  {t:"Replies", d:"Each objection answered", html:`
+    <p><strong>Reply to Objection 1.</strong> Where a belief came from is not enough, and the argument does not rest on that. Experience has authority because it bears on the very thing in question, under conditions that let the person sense it.</p>
+    <p><strong>Reply to Objection 2.</strong> Kant&rsquo;s distinction is accepted as a description of how thinking works. It does not follow that the mind can know anything about what exists without the senses. Logic shows what follows from what has been sensed. It adds nothing new to this reality.</p>
+    <p><strong>Reply to Objection 3.</strong> Getting along is not yet truth, and the argument does not rest on it. It rests on experience that brings the person into contact with the thing itself.</p>`},
+  {t:"Conclusion", d:"The verdict", html:`
+    <p style="font-family:var(--display);font-size:1.6rem;line-height:1.25">Experience earns authority because it puts a person in contact with this reality. It is the source of knowledge about what exists, and nothing that bypasses the senses can stand in for it.</p>
+    <p>What the senses tell a person, in Goatis&rsquo;s words, is what knowing is.</p>`}
+];
+const stepsEl = document.getElementById('steps'), pane = document.getElementById('pane');
+let cur = 0;
+function showStep(i, focus){
+  cur = i;
+  [...stepsEl.children].forEach((b, j) => { b.setAttribute('aria-selected', j === i); b.tabIndex = j === i ? 0 : -1; });
+  const s = STEPS[i];
+  pane.innerHTML = `<div class="where"><span class="label">Book I &middot; Question 1 &middot; Article 1</span><span class="label">p. 16</span></div>
+    <h3>Whether experience can be trusted because it comes from the body</h3>
+    <div class="txt">${s.html}</div>
+    <div class="nav">${i > 0 ? `<button class="btn sm" type="button" data-go="${i-1}">&larr; ${STEPS[i-1].t}</button>` : ''}${i < STEPS.length-1 ? `<button class="btn sm solid" type="button" data-go="${i+1}">${STEPS[i+1].t} &rarr;</button>` : `<a class="btn sm solid" href="#contents">See all 165 Questions &rarr;</a>`}</div>`;
+  if (focus) stepsEl.children[i].focus();
+}
+STEPS.forEach((s, i) => {
+  const b = document.createElement('button');
+  b.type = 'button'; b.setAttribute('role','tab');
+  b.innerHTML = `<span class="n">${i+1}</span><span class="t">${s.t}</span><span class="d">${s.d}</span>`;
+  b.addEventListener('click', () => showStep(i));
+  stepsEl.appendChild(b);
+});
+stepsEl.addEventListener('keydown', e => {
+  if (e.key === 'ArrowDown' || e.key === 'ArrowRight') { e.preventDefault(); showStep((cur+1) % STEPS.length, true); }
+  if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') { e.preventDefault(); showStep((cur+STEPS.length-1) % STEPS.length, true); }
+});
+pane.addEventListener('click', e => { const g = e.target.closest('[data-go]'); if (g) showStep(+g.dataset.go); });
+showStep(0);
+
+/* Contents */
+const partsEl = document.getElementById('parts'), qEl = document.getElementById('q'), chipsEl = document.getElementById('chips');
+let partFilter = -1;
+chipsEl.innerHTML = `<button class="chip" type="button" data-p="-1" aria-pressed="true">All 19 Books</button>` +
+  PARTS.map((p, i) => `<button class="chip" type="button" data-p="${i}" aria-pressed="false"><i style="background:var(${p.c})"></i>${p.name}</button>`).join('') +
+  `<span class="count" id="count" aria-live="polite"></span>`;
+chipsEl.addEventListener('click', e => { const c = e.target.closest('.chip'); if (c) setPart(+c.dataset.p); });
+function setPart(p){
+  partFilter = p;
+  chipsEl.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', +c.dataset.p === p));
+  render();
+}
+function render(){
+  const t = qEl.value.trim().toLowerCase();
   const re = t ? new RegExp('(' + t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')','ig') : null;
+  const hl = s => re ? esc(s).replace(re, '<mark>$1</mark>') : esc(s);
   let hits = 0, html = '';
-  PARTS.forEach(p => {
+  PARTS.forEach((p, pi) => {
+    if (partFilter >= 0 && partFilter !== pi) return;
     let books = '';
-    BOOKS.slice(p.from, p.to).forEach((b, i) => {
-      const idx = p.from + i;
-      const next = idx + 1 < BOOKS.length ? BOOKS[idx+1].p : END;
-      const title = TITLES[b.n] || b.t;
+    BOOKS.slice(p.from, p.to).forEach((b, k) => {
+      const i = p.from + k, title = titleOf(b);
       const bookHit = re && title.toLowerCase().includes(t);
-      const qs = b.q.filter(q => !re || bookHit || q[1].toLowerCase().includes(t) || ('question ' + q[0]).toLowerCase() === t);
+      const qs = b.q.filter(q => !re || bookHit || q[1].toLowerCase().includes(t) || ('q ' + q[0]).toLowerCase() === t || q[0].toLowerCase() === t);
       if (re && !qs.length) return;
       hits += qs.length;
-      const hl = s => re ? esc(s).replace(re, '<mark>$1</mark>') : esc(s);
-      books += `<details class="book"${re ? ' open' : ''}><summary><span class="bnum">${b.n}</span><span class="btitle">${hl(title)}</span><span class="bmeta">${b.q.length} Q &middot; pp. ${b.p}&ndash;${next-1}<span class="chev" aria-hidden="true">&rsaquo;</span></span></summary><ol class="qs">` +
-        qs.map(q => `<li><span class="qn">Q ${q[0]}</span><span>${hl(q[1])}</span><span class="pg">${q[2]}</span></li>`).join('') + `</ol></details>`;
+      const a = (b.p - START) / (END - START) * 100, w = (endOf(i) - b.p + 1) / (END - START) * 100;
+      books += `<details class="bk" id="book-${b.n}"${re ? ' open' : ''}><summary><span class="bnum">${b.n}</span><span class="btitle">${hl(title)}</span><span class="bmeta"><span class="span" title="Position in the volume"><i style="left:${a}%;width:${Math.max(w,2)}%"></i></span>${b.q.length} Q &middot; pp. ${b.p}&ndash;${endOf(i)}<span class="chev" aria-hidden="true">&rsaquo;</span></span></summary><ol class="qs">` +
+        qs.map(q => `<li><span class="qn">Q ${q[0]}</span><span>${hl(q[1])}</span><span class="pg">p. ${q[2]}</span></li>`).join('') + `</ol></details>`;
     });
-    if (books) html += `<div class="part"><div class="part-tag"><span class="label">Books</span><span class="range">${p.range}</span><h3 style="font-size:1.25rem">${p.name}</h3><p>${p.note}</p></div><div class="books">${books}</div></div>`;
+    if (books) html += `<div class="part" style="--pc:var(${p.c})"><div class="part-tag"><span class="label">Books</span><span class="range">${p.range}</span><h3>${p.name}</h3><p>${p.note}</p></div><div class="books">${books}</div></div>`;
   });
-  partsEl.innerHTML = html || '<p class="note">No Question matches that search. Try a shorter word, such as &ldquo;God&rdquo; or &ldquo;food&rdquo;.</p>';
-  document.getElementById('count').textContent = t ? `${hits} of 165 Questions` : '165 Questions';
+  partsEl.innerHTML = html || `<p class="empty">No Question matches &ldquo;${esc(qEl.value)}&rdquo;. Try a shorter word, such as &ldquo;God&rdquo; or &ldquo;food&rdquo;.</p>`;
+  const total = partFilter >= 0 ? BOOKS.slice(PARTS[partFilter].from, PARTS[partFilter].to).reduce((n, b) => n + b.q.length, 0) : 165;
+  document.getElementById('count').textContent = t ? `${hits} of ${total} Questions` : `${total} Questions`;
+  syncToggle();
 }
-render('');
-document.getElementById('q').addEventListener('input', e => render(e.target.value));
+function openBook(n){
+  qEl.value = ''; setPart(-1);
+  const d = document.getElementById('book-' + n);
+  if (d) { d.open = true; d.scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block:'start'}); d.querySelector('summary').focus({preventScroll:true}); }
+}
 const tg = document.getElementById('toggle');
-tg.addEventListener('click', () => {
-  const all = [...document.querySelectorAll('details.book')];
-  const open = !all.every(d => d.open);
-  all.forEach(d => d.open = open);
-  tg.textContent = open ? 'Close all' : 'Open all';
-});
+function syncToggle(){ const all = [...document.querySelectorAll('details.bk')]; tg.textContent = all.length && all.every(d => d.open) ? 'Close all' : 'Open all'; }
+tg.addEventListener('click', () => { const all = [...document.querySelectorAll('details.bk')]; const open = !all.every(d => d.open); all.forEach(d => d.open = open); syncToggle(); });
+partsEl.addEventListener('toggle', syncToggle, true);
+qEl.addEventListener('input', render);
+document.querySelectorAll('[data-part]').forEach(a => a.addEventListener('click', () => { qEl.value = ''; setPart(+a.dataset.part); }));
+render();
 
+/* Credit */
 document.getElementById('tags').innerHTML = document.getElementById('tagline').textContent.split(', ').map(s => `<span>${esc(s)}</span>`).join('');
 document.querySelectorAll('[data-copy]').forEach(btn => btn.addEventListener('click', () => {
-  const el = document.getElementById(btn.dataset.copy);
-  const text = el.textContent.replace(/\s+/g,' ').trim();
-  const label = btn.textContent;
-  const done = msg => { btn.textContent = msg; setTimeout(() => btn.textContent = label, 1600); };
-  navigator.clipboard.writeText(text).then(() => done('Copied'), () => {
-    el.hidden = false; const r = document.createRange(); r.selectNodeContents(el);
-    const s = getSelection(); s.removeAllRanges(); s.addRange(r); done('Press Ctrl+C');
-  });
+  const text = document.getElementById(btn.dataset.copy).textContent.replace(/\s+/g,' ').trim();
+  const label = btn.textContent, done = m => { btn.textContent = m; setTimeout(() => btn.textContent = label, 1600); };
+  const fallback = () => { const ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select(); let ok = false; try { ok = document.execCommand('copy'); } catch(e){} ta.remove(); done(ok ? 'Copied' : 'Copy failed'); };
+  navigator.clipboard ? navigator.clipboard.writeText(text).then(() => done('Copied'), fallback) : fallback();
 }));
-</script>
+document.getElementById('toTop').addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
 
+/* Motion: progress bar, active nav, book tilt, count-up, reveal */
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const prog = document.getElementById('progress');
+const navLinks = [...document.querySelectorAll('nav.top ul a')];
+const secs = navLinks.map(a => document.querySelector(a.getAttribute('href')));
+function onScroll(){
+  const h = document.documentElement, max = h.scrollHeight - h.clientHeight;
+  prog.style.transform = `scaleX(${max > 0 ? h.scrollTop / max : 0})`;
+  let on = -1; secs.forEach((s, i) => { if (s && s.getBoundingClientRect().top < 140) on = i; });
+  navLinks.forEach((a, i) => a.classList.toggle('on', i === on));
+}
+addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+if (!reduce) {
+  const book = document.getElementById('book'), hero = document.querySelector('.hero');
+  hero.addEventListener('pointermove', e => {
+    if (e.pointerType !== 'mouse') return;
+    const r = hero.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+    book.style.transform = `rotateY(${-26 + x * 22}deg) rotateX(${6 - y * 10}deg)`;
+    book.querySelector('.face').style.setProperty('--sheen', `${-60 + (x + .5) * 140}%`);
+  });
+  hero.addEventListener('pointerleave', () => { book.style.transform = ''; book.querySelector('.face').style.setProperty('--sheen','-60%'); });
+
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.remove('pre'); io.unobserve(e.target); } }), {rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rv').forEach(el => { if (el.getBoundingClientRect().top > innerHeight) { el.classList.add('pre'); io.observe(el); } });
+
+  const cio = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return; cio.unobserve(e.target);
+    const el = e.target, to = +el.dataset.count, sep = el.dataset.sep, t0 = performance.now(), dur = 1400;
+    const fmt = n => sep ? n.toLocaleString('en-US') : String(n);
+    const tick = now => { const k = Math.min(1, (now - t0) / dur), v = Math.round(to * (1 - Math.pow(1 - k, 3))); el.textContent = fmt(v); if (k < 1) requestAnimationFrame(tick); };
+    requestAnimationFrame(tick);
+  }), {threshold:.6});
+  document.querySelectorAll('[data-count]').forEach(el => cio.observe(el));
+}
+</script>
 </body>
 </html>
