@@ -8,6 +8,7 @@
 <meta property="og:title" content="The Apexist Summa: Goatis Source Edition">
 <meta property="og:description" content="Nineteen Books on Natural Living and the Case for Life Without Gods, by Jesse Anderson.">
 <meta property="og:type" content="book">
+<link rel="canonical" href="https://jesseanderson.vercel.app/">
 <meta name="theme-color" content="#5E1220">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='6' fill='%235E1220'/%3E%3Ctext x='32' y='46' font-family='Georgia,serif' font-size='40' font-weight='700' text-anchor='middle' fill='%23E6C98A'%3EA%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -241,6 +242,42 @@ footer .wrap{position:relative;display:grid;gap:3rem}
 .rv{transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
 .rv.pre{opacity:0;transform:translateY(24px)}
 
+
+/* Where to read */
+.rgrid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:1rem}
+.rcard{grid-column:span 2;display:grid;grid-template-rows:auto auto auto 1fr auto;gap:.45rem;padding:1.4rem;border:1px solid var(--rule);background:var(--leaf);color:var(--ink);text-decoration:none;border-radius:3px;position:relative;overflow:hidden;transition:transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .25s,border-color .25s}
+.rcard:hover{transform:translateY(-4px);border-color:var(--garnet);box-shadow:0 24px 40px -24px rgba(0,0,0,.45)}
+.rcard:not(.feature){grid-column:span 3}
+.rcard.feature{grid-column:span 6;grid-template-columns:auto minmax(0,1fr) auto;grid-template-rows:auto auto auto;column-gap:1.4rem;padding:1.8rem;background:var(--cover);border-color:var(--cover);color:#F3EADA}
+.rcard.feature .ric{grid-row:1/4;width:3.6rem;height:3.6rem;color:var(--cover-gilt);border-color:rgba(230,201,138,.4)}
+.rcard.feature .rhost{color:var(--cover-gilt)}
+.rcard.feature .rtitle{font-size:2.2rem}
+.rcard.feature .rdesc{color:#E0D2BD;max-width:40rem}
+.rcard.feature .rfoot{grid-column:3;grid-row:1/4;flex-direction:column;align-items:flex-end;justify-content:center;border:0;padding:0;margin:0}
+.rcard.feature .rfmt{color:#E0D2BD}
+.rcard.feature .rcta{background:var(--cover-gilt);color:var(--cover-deep);padding:.8rem 1.1rem;border-radius:2px}
+.rcard.feature:hover{border-color:var(--cover-gilt)}
+.rcard.feature::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.1) 50%,transparent 65%);transform:translateX(-100%);transition:transform .8s;pointer-events:none}
+.rcard.feature:hover::after{transform:translateX(100%)}
+.ric{width:2.6rem;height:2.6rem;display:grid;place-items:center;border:1px solid var(--rule);border-radius:50%;color:var(--garnet)}
+.ric svg{width:55%;height:55%}
+.rhost{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-top:.3rem}
+.rtitle{font-family:var(--display);font-size:1.6rem;font-weight:600;line-height:1.05}
+.rdesc{font-size:.95rem;line-height:1.5;color:var(--ink-soft)}
+.rfoot{display:flex;justify-content:space-between;align-items:center;gap:.8rem;flex-wrap:wrap;border-top:1px solid var(--rule);padding-top:.8rem;margin-top:.4rem}
+.rfmt{font-family:var(--mono);font-size:.72rem;color:var(--ink-soft)}
+.rcta{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--garnet);display:inline-flex;gap:.35rem;align-items:center;white-space:nowrap}
+.rcard .arr{transition:transform .2s}.rcard:hover .arr{transform:translate(2px,-2px)}
+.share{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1rem;margin-top:1.6rem;padding:1rem 1.2rem;border:1px dashed var(--rule);border-radius:3px}
+.share code{font-size:.9rem;color:var(--ink);overflow-wrap:anywhere}
+@media (max-width:900px){
+  .rgrid{grid-template-columns:1fr}
+  .rcard,.rcard:not(.feature){grid-column:auto}
+  .rcard.feature{grid-column:auto;grid-template-columns:1fr;grid-template-rows:none;padding:1.5rem}
+  .rcard.feature .ric{grid-row:auto}
+  .rcard.feature .rfoot{grid-column:auto;grid-row:auto;flex-direction:row;justify-content:space-between;margin-top:.6rem}
+  .rcard.feature .rtitle{font-size:1.9rem}
+}
 @media (max-width:900px){
   .hero .wrap{grid-template-columns:1fr;gap:2.5rem}
   .stage{order:-1}
@@ -287,6 +324,7 @@ footer .wrap{position:relative;display:grid;gap:3rem}
   <div class="wrap">
     <a class="mark" href="#top">Apexist <span>Summa</span></a>
     <ul>
+      <li><a href="#read">Read it</a></li>
       <li><a href="#about">The work</a></li>
       <li><a href="#volume">The volume</a></li>
       <li><a href="#method">Read an Article</a></li>
@@ -306,8 +344,8 @@ footer .wrap{position:relative;display:grid;gap:3rem}
       <p class="sub">Nineteen Books on Natural Living and the Case for Life Without Gods</p>
       <div class="byline"><span class="label">By</span><b>Jesse Anderson</b></div>
       <div class="ctas">
-        <a class="btn solid" href="#contents">Explore the contents <span class="arr">&rarr;</span></a>
-        <a class="btn" href="#method">Read an Article</a>
+        <a class="btn solid" href="https://archive.org/details/apexist-summa-revised" target="_blank" rel="noopener">Read it free on the Internet Archive <span class="arr">&nearr;</span></a>
+        <a class="btn" href="#read">All the ways to read</a>
       </div>
     </div>
     <div class="stage" aria-hidden="true">
@@ -338,14 +376,66 @@ footer .wrap{position:relative;display:grid;gap:3rem}
     <div><b>CC&nbsp;BY</b><span>free to share and adapt, with credit</span></div>
   </div>
 
+
+<section id="read">
+  <div class="sec-head rv"><span class="label">Where to read</span><h2>Free to read, <em>everywhere</em></h2></div>
+  <div class="indent">
+    <p class="body-col rv" style="margin-bottom:2rem">The Apexist Summa is free. Read it online, download the whole manuscript, or keep your own copy. Every link below leads to the same first edition of November 2026.</p>
+    <div class="rgrid rv">
+      <a class="rcard feature" href="https://archive.org/details/apexist-summa-revised" target="_blank" rel="noopener">
+        <span class="ric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 21V5M8 7h7M8 11h7"/></svg></span>
+        <span class="rhost">archive.org</span>
+        <span class="rtitle">Internet Archive</span>
+        <span class="rdesc">The permanent public edition, free to read with no account needed. Preserved by the Internet Archive for the long run.</span>
+        <span class="rfoot"><span class="rfmt">Free &middot; Online</span><span class="rcta">Open the archive page <span class="arr">&nearr;</span></span></span>
+      </a>
+      <a class="rcard " href="https://archive.org/download/apexist-summa-revised/Apexist_Summa_Revised.docx" target="_blank" rel="noopener">
+        <span class="ric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg></span>
+        <span class="rhost">archive.org</span>
+        <span class="rtitle">Download the manuscript</span>
+        <span class="rdesc">The complete first edition as a Word document: all nineteen Books, the source register and the index.</span>
+        <span class="rfoot"><span class="rfmt">.docx &middot; 2.1 MB</span><span class="rcta">Download <span class="arr">&nearr;</span></span></span>
+      </a>
+      <a class="rcard " href="https://archive.org/download/apexist-summa-revised/apexist-summa-revised_archive.torrent" target="_blank" rel="noopener">
+        <span class="ric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.2 10.9 15.8 7.1M8.2 13.1l7.6 3.8"/></svg></span>
+        <span class="rhost">archive.org</span>
+        <span class="rtitle">BitTorrent</span>
+        <span class="rdesc">Fetch and seed the full archive item peer to peer, so the book stays available from many places at once.</span>
+        <span class="rfoot"><span class="rfmt">.torrent</span><span class="rcta">Get the torrent <span class="arr">&nearr;</span></span></span>
+      </a>
+      <a class="rcard " href="https://github.com/fart-in-me-mouth/JesseAnderson" target="_blank" rel="noopener">
+        <span class="ric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 4l-4 16"/></svg></span>
+        <span class="rhost">github.com</span>
+        <span class="rtitle">GitHub</span>
+        <span class="rdesc">The source of this website, open for anyone to copy, host or mirror under the same license.</span>
+        <span class="rfoot"><span class="rfmt">Open source</span><span class="rcta">View the repository <span class="arr">&nearr;</span></span></span>
+      </a>
+      <a class="rcard " href="https://fart-in-me-mouth.github.io/JesseAnderson/" target="_blank" rel="noopener">
+        <span class="ric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg></span>
+        <span class="rhost">github.io</span>
+        <span class="rtitle">Mirror site</span>
+        <span class="rdesc">A second copy of this page on GitHub Pages, in case this one is ever unavailable.</span>
+        <span class="rfoot"><span class="rfmt">Mirror</span><span class="rcta">Visit the mirror <span class="arr">&nearr;</span></span></span>
+      </a>
+    </div>
+    <div class="share rv">
+      <span class="label">Share this page</span>
+      <code id="shareurl">https://jesseanderson.vercel.app</code>
+      <button class="btn sm" type="button" data-copy="shareurl">Copy link</button>
+    </div>
+  </div>
+</section>
+
 <section id="about">
   <div class="sec-head rv"><span class="label">The work</span><h2>A complete philosophy of the <em>natural life</em>, argued from the ground up</h2></div>
   <div class="about-grid indent">
     <div class="body-col rv">
-      <p class="lede"><strong>The Apexist Summa</strong> is a comprehensive examination, systematization and defense of the worldview of Goatis, formerly known as Sv3rige. Jesse Anderson takes Goatis&rsquo;s teaching and builds it into a full philosophical framework: knowledge and reality, human nature and morality, health and society, and religion.</p>
-      <p>It opens with the oldest questions in philosophy. How do the senses, reason and knowledge relate? What exists, and what causes it? From there it develops an account of human nature and practical judgment: instinct, survival, reproduction, moral nihilism, personal freedom, natural hierarchy and the purpose of a human life.</p>
-      <p>The middle books turn to how to live. Nutrition and raw animal foods, the body and exercise, relationships and family, medicine and scientific authority, technology, the state, schooling and modern civilization. Throughout, Goatis&rsquo;s recorded statements, including his controversial historical claims, are kept distinct from the author&rsquo;s own arguments and from the empirical evidence.</p>
-      <p>The last four books take on the existence of God. Aquinas&rsquo;s Five Ways, the cosmological arguments, divine simplicity, contingency and sufficient reason, consciousness, morality, fine-tuning, religious experience, miracles, divine hiddenness and the problem of evil are each examined in turn. Together they make a sustained case for naturalism and for life without gods.</p>
+      <p class="lede"><strong>The Apexist Summa</strong> is a comprehensive philosophical examination, systematization, and defense of the worldview of Goatis, formerly known as Sv3rige. Written by Jesse Anderson, the work develops Goatis&rsquo;s teachings into an extensive philosophical framework addressing the foundations of knowledge, the nature of reality, human existence, morality, health, society, and religion.</p>
+      <p>Spanning nineteen books, 165 formal Questions, and more than 1,300 pages, the Summa employs a method inspired by classical scholastic philosophy. Each subject is examined through structured objections, relevant source passages, developed arguments, replies to opposing positions, and reasoned conclusions. The objective is not merely to summarize Goatis&rsquo;s teachings, but to investigate their philosophical foundations and construct the strongest available arguments in their defense.</p>
+      <p>The work begins with questions of epistemology and metaphysics, examining the relationship between sensory experience, reason, knowledge, existence, causation, and the natural world. It then develops an account of human nature and practical judgment, exploring instinct, survival, reproduction, moral nihilism, personal freedom, natural hierarchy, and the purposes of human life.</p>
+      <p>Subsequent books address nutrition, raw animal foods, physical development, exercise, relationships, family, medicine, scientific authority, technology, political institutions, education, and modern civilization. Throughout these discussions, the Summa examines Goatis&rsquo;s documented positions, including controversial historical claims, while distinguishing his recorded statements from the author&rsquo;s independent philosophical arguments and the available empirical evidence.</p>
+      <p>The concluding four books provide an extensive investigation into the existence of God. Drawing upon classical and contemporary philosophy, they examine the cosmological arguments, Aquinas&rsquo;s Five Ways, divine simplicity, contingency, the principle of sufficient reason, consciousness, moral arguments, fine-tuning, religious experience, miracles, divine hiddenness, and the problem of evil. The work develops a sustained philosophical case for naturalism and life without gods.</p>
+      <p>The manuscript incorporates extensive primary-source documentation, scholarly references, historical context, and independent philosophical analysis.</p>
       <div class="topics" aria-label="Subjects">
         <span>Epistemology</span><span>Metaphysics</span><span>Ethics</span><span>Nutrition</span><span>The body</span><span>Family</span><span>Society</span><span>Philosophy of religion</span><span>Naturalism</span>
       </div>
@@ -404,7 +494,7 @@ footer .wrap{position:relative;display:grid;gap:3rem}
       <dt>Published</dt><dd>November 2026</dd>
       <dt>Language</dt><dd>English</dd>
       <dt>Length</dt><dd>19 Books, 165 Questions, 1,357 pages</dd>
-      <dt>Identifier</dt><dd><code>apexist-summa-revised</code></dd>
+      <dt>Archive item</dt><dd><a href="https://archive.org/details/apexist-summa-revised" target="_blank" rel="noopener">archive.org/details/apexist-summa-revised</a></dd>
       <dt>License</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a> for the original text and arrangement</dd>
     </dl>
     <div class="cite">
@@ -430,11 +520,11 @@ footer .wrap{position:relative;display:grid;gap:3rem}
       <div class="f-cols">
         <div>
           <h4>On this page</h4>
-          <ul><li><a href="#about">The work</a></li><li><a href="#volume">The volume</a></li><li><a href="#method">Read an Article</a></li><li><a href="#contents">Contents</a></li><li><a href="#credit">Credit</a></li></ul>
+          <ul><li><a href="#read">Where to read</a></li><li><a href="#about">The work</a></li><li><a href="#volume">The volume</a></li><li><a href="#method">Read an Article</a></li><li><a href="#contents">Contents</a></li><li><a href="#credit">Credit</a></li></ul>
         </div>
         <div>
-          <h4>The four parts</h4>
-          <ul><li><a href="#contents" data-part="0">Foundations</a></li><li><a href="#contents" data-part="1">The Primal Life</a></li><li><a href="#contents" data-part="2">The Teaching Applied</a></li><li><a href="#contents" data-part="3">The Question of God</a></li></ul>
+          <h4>Read the book</h4>
+          <ul><li><a href="https://archive.org/details/apexist-summa-revised" target="_blank" rel="noopener">Internet Archive</a></li><li><a href="https://archive.org/download/apexist-summa-revised/Apexist_Summa_Revised.docx" target="_blank" rel="noopener">Download (.docx)</a></li><li><a href="https://archive.org/download/apexist-summa-revised/apexist-summa-revised_archive.torrent" target="_blank" rel="noopener">BitTorrent</a></li><li><a href="https://github.com/fart-in-me-mouth/JesseAnderson" target="_blank" rel="noopener">GitHub</a></li><li><a href="https://fart-in-me-mouth.github.io/JesseAnderson/" target="_blank" rel="noopener">Mirror site</a></li></ul>
         </div>
       </div>
     </div>
