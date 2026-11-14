@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Apexist Summa | Jesse Anderson</title>
+<meta name="description" content="The Apexist Summa: Goatis Source Edition by Jesse Anderson. Nineteen Books on Natural Living and the Case for Life Without Gods.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a manuscript folio. Narrow text column, a ruled margin for book numerals, and the contents as the centerpiece. */
+:root{
+  --stone:#ECEBE5; --leaf:#F6F5F0; --ink:#1C2320; --ink-soft:#4A5550; --rule:#C9CBC2;
+  --garnet:#8A1C2B; --garnet-soft:#F1E1E1; --moss:#3F5A45;
+  --display:"Cormorant Garamond","Cormorant",Garamond,"Times New Roman",serif;
+  --body:"Newsreader",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --stone:#141917; --leaf:#1B211E; --ink:#E7E4DA; --ink-soft:#A3A89F; --rule:#323A35;
+  --garnet:#E0838D; --garnet-soft:#3A2226; --moss:#93B49A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --stone:#141917; --leaf:#1B211E; --ink:#E7E4DA; --ink-soft:#A3A89F; --rule:#323A35;
+  --garnet:#E0838D; --garnet-soft:#3A2226; --moss:#93B49A; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}body{margin:0;background:var(--stone);color:var(--ink);font-family:var(--body);font-size:1.075rem;line-height:1.65;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:62rem;margin:0 auto}
+a{color:var(--garnet)}
+:focus-visible{outline:2px solid var(--garnet);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);font-weight:600;text-wrap:balance;margin:0;line-height:1.1}
+.label{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+p{margin:0}
+
+/* Hero */
+header.hero{padding-block:4.5rem 3rem;display:grid;grid-template-columns:minmax(0,1fr) 15rem;gap:3rem;align-items:end;border-bottom:1px solid var(--rule)}
+.hero h1{font-size:clamp(3rem,9vw,6.2rem);font-weight:600;letter-spacing:-.01em;line-height:.92}
+.hero h1 em{display:block;font-style:italic;font-weight:500;color:var(--garnet);font-size:.5em;letter-spacing:0;margin-top:.6rem}
+.hero .sub{font-family:var(--display);font-size:clamp(1.25rem,2.6vw,1.6rem);font-style:italic;color:var(--ink-soft);margin-top:1.4rem;max-width:34ch}
+.hero .by{margin-top:2rem;font-family:var(--display);font-size:1.4rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.colophon{display:grid;gap:.9rem;padding:1.25rem 0;border-top:3px double var(--ink);border-bottom:3px double var(--ink)}
+.colophon div{display:grid;gap:.1rem}
+.colophon b{font-family:var(--display);font-size:1.6rem;font-weight:600;line-height:1;font-variant-numeric:lining-nums tabular-nums}
+.colophon span{font-size:.92rem;color:var(--ink-soft)}
+
+/* Sections */
+section{padding-block:3.5rem;border-bottom:1px solid var(--rule)}
+.sec-head{display:grid;grid-template-columns:9rem minmax(0,1fr);gap:2rem;margin-bottom:1.75rem;align-items:baseline}
+.sec-head h2{font-size:clamp(1.9rem,4vw,2.6rem)}
+.body-col{margin-left:11rem;max-width:40rem;display:grid;gap:1.1rem;min-width:0}
+.lede{font-size:1.22rem;line-height:1.55}
+.lede::first-letter{font-family:var(--display);float:left;font-size:4.4em;line-height:.8;padding:.06em .1em 0 0;color:var(--garnet);font-weight:600}
+
+/* Method */
+.method{margin-left:11rem;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border:1px solid var(--rule);background:var(--leaf)}
+.method div{padding:1.1rem 1rem;border-right:1px solid var(--rule);display:grid;gap:.35rem;align-content:start;min-width:0}
+.method div:last-child{border-right:0}
+.method .label{color:var(--garnet)}
+.method h3{font-size:1.3rem}
+.method p{font-size:.93rem;color:var(--ink-soft);line-height:1.45}
+
+/* Parts & books */
+.parts{display:grid;gap:3rem}
+.part{display:grid;grid-template-columns:9rem minmax(0,1fr);gap:2rem}
+.part-tag{display:grid;gap:.3rem;align-content:start;position:sticky;top:calc(env(safe-area-inset-top,0px) + 1rem);align-self:start}
+.part-tag .range{font-family:var(--display);font-size:1.6rem;font-weight:600;color:var(--garnet);line-height:1}
+.part-tag p{font-size:.9rem;color:var(--ink-soft);line-height:1.4}
+.books{display:grid;gap:0;border-top:1px solid var(--ink)}
+details.book{border-bottom:1px solid var(--rule)}
+details.book>summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:4rem minmax(0,1fr) auto;gap:1rem;align-items:baseline;padding:1rem .25rem}
+details.book>summary::-webkit-details-marker{display:none}
+details.book>summary:hover{background:var(--garnet-soft)}
+.bnum{font-family:var(--display);font-size:1.5rem;font-weight:700;color:var(--garnet);font-variant-numeric:lining-nums}
+.btitle{font-family:var(--display);font-size:1.45rem;font-weight:600;line-height:1.15}
+.bmeta{font-family:var(--mono);font-size:.75rem;color:var(--ink-soft);white-space:nowrap;display:flex;gap:.8rem;align-items:center}
+.bmeta .chev{transition:transform .2s ease;display:inline-block}
+details[open] .chev{transform:rotate(90deg)}
+ol.qs{list-style:none;margin:0;padding:0 .25rem 1.25rem 5rem;display:grid;gap:.15rem}
+ol.qs li{display:grid;grid-template-columns:3.4rem minmax(0,1fr) 3rem;gap:.75rem;font-size:.98rem;line-height:1.4;padding:.3rem 0;border-bottom:1px dotted var(--rule)}
+ol.qs .qn{font-family:var(--mono);font-size:.78rem;color:var(--garnet);padding-top:.15rem}
+ol.qs .pg{font-family:var(--mono);font-size:.78rem;color:var(--ink-soft);text-align:right;padding-top:.15rem;font-variant-numeric:tabular-nums}
+.toolbar{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;margin-bottom:1.75rem;margin-left:11rem}
+.toolbar input{flex:1 1 16rem;min-width:0;font:inherit;font-size:1rem;padding:.6rem .8rem;border:1px solid var(--rule);background:var(--leaf);color:var(--ink);border-radius:2px}
+button.btn{font-family:var(--mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;padding:.6rem .9rem;border:1px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;border-radius:2px}
+button.btn:hover{background:var(--ink);color:var(--stone)}
+.count{font-family:var(--mono);font-size:.75rem;color:var(--ink-soft)}
+mark{background:var(--garnet-soft);color:inherit;padding:0 .1em}
+.back{font-family:var(--mono);font-size:.78rem;color:var(--ink-soft);display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;margin-top:1.5rem;padding-left:4.25rem}
+
+/* Record */
+.record{margin-left:11rem;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2.5rem}
+dl.fields{margin:0;display:grid;grid-template-columns:7rem minmax(0,1fr);border-top:1px solid var(--ink)}
+dl.fields dt,dl.fields dd{margin:0;padding:.55rem 0;border-bottom:1px solid var(--rule)}
+dl.fields dt{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);padding-top:.75rem}
+dl.fields dd{font-size:.98rem}
+code{font-family:var(--mono);font-size:.85em}
+.cite{background:var(--leaf);border:1px solid var(--rule);padding:1.25rem;display:grid;gap:.9rem;align-content:start}
+.cite blockquote{margin:0;font-size:1.02rem;line-height:1.55}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.tags span{font-family:var(--mono);font-size:.74rem;border:1px solid var(--rule);padding:.2rem .5rem;border-radius:2px;background:var(--stone)}
+.note{font-size:.88rem;color:var(--ink-soft);line-height:1.5}
+
+footer{padding-block:2.5rem 3.5rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
+footer p{font-size:.9rem;color:var(--ink-soft)}
+
+@media (max-width:820px){
+  header.hero{grid-template-columns:1fr;gap:2rem;padding-block:3rem 2rem}
+  .colophon{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sec-head,.part{grid-template-columns:1fr;gap:.6rem}
+  .body-col,.method,.toolbar,.record{margin-left:0}
+  .part-tag{position:static}
+  .method{grid-template-columns:1fr}
+  .method div{border-right:0;border-bottom:1px solid var(--rule)}
+  .method div:last-child{border-bottom:0}
+  .record{grid-template-columns:1fr}
+  ol.qs{padding-left:.25rem}
+  .back{padding-left:0}
+}
+@media (max-width:480px){
+  details.book>summary{grid-template-columns:2.6rem minmax(0,1fr);}
+  .bmeta{grid-column:2}
+  ol.qs li{grid-template-columns:2.8rem minmax(0,1fr) 2.6rem;gap:.5rem}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+<header class="hero">
+  <div>
+    <p class="label">Goatis Source Edition &middot; First Edition &middot; November 2026</p>
+    <h1 style="margin-top:1.2rem">The Apexist Summa<em>Goatis Source Edition</em></h1>
+    <p class="sub">Nineteen Books on Natural Living and the Case for Life Without Gods</p>
+    <p class="by">Jesse Anderson</p>
+  </div>
+  <div class="colophon" aria-label="The work in figures">
+    <div><b>19</b><span>Books</span></div>
+    <div><b>165</b><span>formal Questions</span></div>
+    <div><b>1,357</b><span>pages, with source register and index</span></div>
+    <div><b>CC BY 4.0</b><span>original text and arrangement</span></div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="sec-head"><span class="label">The work</span><h2>A systematic defense of a natural life</h2></div>
+  <div class="body-col">
+    <p class="lede"><strong>The Apexist Summa</strong> is a comprehensive philosophical examination, systematization, and defense of the worldview of Goatis, formerly known as Sv3rige. Jesse Anderson develops Goatis&rsquo;s teachings into an extensive philosophical framework addressing the foundations of knowledge, the nature of reality, human existence, morality, health, society, and religion.</p>
+    <p>The work begins with epistemology and metaphysics: the relationship between sensory experience, reason, knowledge, existence, causation, and the natural world. It then develops an account of human nature and practical judgment, exploring instinct, survival, reproduction, moral nihilism, personal freedom, natural hierarchy, and the purposes of human life.</p>
+    <p>Later books address nutrition, raw animal foods, physical development, exercise, relationships, family, medicine, scientific authority, technology, political institutions, education, and modern civilization. Throughout, the Summa examines Goatis&rsquo;s documented positions, including controversial historical claims, while distinguishing his recorded statements from the author&rsquo;s independent philosophical arguments and the available empirical evidence.</p>
+    <p>The concluding four books investigate the existence of God. Drawing on classical and contemporary philosophy, they examine the cosmological arguments, Aquinas&rsquo;s Five Ways, divine simplicity, contingency, the principle of sufficient reason, consciousness, moral arguments, fine-tuning, religious experience, miracles, divine hiddenness, and the problem of evil, and build a sustained case for naturalism and life without gods.</p>
+  </div>
+</section>
+
+<section id="method">
+  <div class="sec-head"><span class="label">The method</span><h2>How each Article proceeds</h2></div>
+  <div class="body-col" style="margin-bottom:1.75rem">
+    <p>The Summa follows the form of classical scholastic philosophy. The aim is to investigate the foundations of each teaching and construct the strongest available arguments in its defense, not merely to summarize it.</p>
+  </div>
+  <div class="method">
+    <div><span class="label">1</span><h3>Objections</h3><p>The opposing position, stated at full strength.</p></div>
+    <div><span class="label">2</span><h3>Source</h3><p>Goatis&rsquo;s recorded words, with video title and date.</p></div>
+    <div><span class="label">3</span><h3>Answer</h3><p>The developed argument for the teaching.</p></div>
+    <div><span class="label">4</span><h3>Replies</h3><p>Each objection answered in turn.</p></div>
+    <div><span class="label">5</span><h3>Conclusion</h3><p>The reasoned verdict of the Question.</p></div>
+  </div>
+</section>
+
+<section id="contents">
+  <div class="sec-head"><span class="label">Contents</span><h2>Nineteen Books, 165 Questions</h2></div>
+  <div class="toolbar">
+    <label for="q" class="label" style="position:absolute;left:-9999px">Search the Questions</label>
+    <input id="q" type="search" placeholder="Search the Questions, e.g. Kalam, raw milk, attraction">
+    <button class="btn" id="toggle" type="button">Open all</button>
+    <span class="count" id="count" aria-live="polite"></span>
+  </div>
+  <div class="parts" id="parts"></div>
+  <p class="back"><span>Health and Evidence Notes &middot; p. 1338</span><span>Source register &middot; p. 1341</span><span>Index &middot; p. 1357</span></p>
+</section>
+
+<section id="record">
+  <div class="sec-head"><span class="label">Archive record</span><h2>Edition and citation</h2></div>
+  <div class="record">
+    <dl class="fields">
+      <dt>Title</dt><dd>The Apexist Summa: Goatis Source Edition</dd>
+      <dt>Creator</dt><dd>Jesse Anderson</dd>
+      <dt>Edition</dt><dd>Goatis Source Edition, First Edition</dd>
+      <dt>Date</dt><dd>November 2026</dd>
+      <dt>Language</dt><dd>English</dd>
+      <dt>Collection</dt><dd>Community texts</dd>
+      <dt>Identifier</dt><dd><code>apexist-summa-revised</code></dd>
+      <dt>License</dt><dd>Creative Commons Attribution 4.0 International (CC BY 4.0)</dd>
+    </dl>
+    <div class="cite">
+      <span class="label">How to credit this book</span>
+      <blockquote id="citation">Jesse Anderson, <i>The Apexist Summa: Goatis Source Edition</i>, first edition, November 2026. Licensed under CC BY 4.0.</blockquote>
+      <div><button class="btn" type="button" data-copy="citation">Copy citation</button></div>
+      <span class="label" style="margin-top:.4rem">Subjects</span>
+      <div class="tags" id="tags"></div>
+      <div><button class="btn" type="button" data-copy="tagline">Copy subject line</button></div>
+      <p class="note">&copy; 2026 Jesse Anderson. Original text and arrangement licensed under CC BY 4.0. Quotations from Goatis and other authors, and other third-party material, are excluded from that license.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>The Apexist Summa &middot; Jesse Anderson &middot; 2026</p>
+  <p><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></p>
+</footer>
+</div>
+<span id="tagline" hidden>Apexism, Goatis, Sv3rige, philosophy, naturalism, atheism, epistemology, metaphysics, ethics, philosophy of religion</span>
+
+<script>
+const BOOKS = [{"n":"I","t":"Knowledge and Method","p":15,"q":[["1","Whether knowledge begins with the senses",16],["2","Whether reasoning can reach beyond what a person has seen for himself",21],["3","Whether testimony and experts can pass on knowledge",27],["4","Whether real science can be told apart from the prestige of institutions",31],["5","Whether instinct and the body’s signals are reliable guides",36],["6","Whether a favored teacher must be checked as strictly as his opponents",41],["7","Whether getting better yourself proves a cause that holds for everyone",46],["8","Whether a consistent teaching must allow for correction",51]]},{"n":"II","t":"Reality and Nature","p":58,"q":[["9","The meanings of nature",59],["10","Material reality",67],["11","Form and organization",76],["12","Actuality and potentiality",81],["13","Functions without a designer",88],["14","Artifacts and natural needs",92],["15","Whether life without gods has better support than belief that a god rules the world",100],["16","Acting for reasons in a world of causes",104]]},{"n":"III","t":"Human Nature and Success","p":116,"q":[["17","A shared human nature",118],["18","Strength in living nature",123],["19","Natural desires and the purpose of human life",129],["20","Instinct and conditioning",133],["21","Competition and cooperation",138],["22","Reason and learned skill",146],["23","The many measures of success",154],["24","Human purpose and a complete life",160]]},{"n":"IV","t":"Natural Law and Practical Judgment","p":170,"q":[["25","The aims of everyday judgment and their authority",171],["26","Facts of nature and moral claims and reasons that depend on one’s aims",175],["27","How the body works and natural means",185],["28","Instinct and judgment and life without self-control",189],["29","Strength and fearlessness and power",194],["30","Empathy and compassion and what they naturally depend on",198],["31","Loyalty and commitment and dependence",203],["32","Choosing between competing outcomes",209]]},{"n":"V","t":"Animal Nourishment and Raw Food","p":218,"q":[["33","Whether animal foods deserve the central place in what we eat",219],["34","Whether the fact that animal food is enough means one must eat only animal food",224],["35","Whether raw food is better than cooked food",228],["36","Whether raw milk and butter and fermented dairy deserve one judgment",237],["37","Whether the rich nutrients in organs call for a limit on eating them",240],["38","Whether the chemicals plants use to defend themselves justify rejecting every plant food",246],["39","Whole foods and the burden on supplements",250],["40","Judging a diet over time",254]]},{"n":"VI","t":"The Practice of a Primal Life","p":260,"q":[["41","Whether the natural life requires one routine for everyone",261],["42","Whether a primal life rejects formal weight training",266],["43","Whether comfort or hardship is the proper guide to living",271],["44","Whether one’s surroundings matter more than constant self-improvement",275],["45","Whether bodily care should begin with the life of the body",279],["46","Whether a primal life can use technology without contradicting itself",283],["47","Whether work and money can help a person be independent",289],["48","Whether limits and dependence defeat the natural ideal",295]]},{"n":"VII","t":"Competition Hierarchy and Community","p":301,"q":[["49","Whether community belongs to a natural human life",303],["50","Whether differences in ability justify hierarchy",307],["51","Whether possessing power establishes a right to rule",311],["52","Whether honesty and self-restraint are needed for a strong group",315],["53","Whether conflict and self-defense have limits set by principle",319],["54","Whether care for dependents follows from the inborn purpose",322],["55","Whether a strong community can permit dissent and departure",329],["56","Whether a teaching can keep its force in practice",332]]},{"n":"VIII","t":"Rival Frameworks and the Cumulative Case","p":342,"q":[["57","Whether natural excellence needs Christianity and natural law to complete it",343],["58","Whether secular humanism leaves anything distinct for the Apexist way of life to do",347],["59","Whether the strongest vegan arguments defeat a life built around animal food",350],["60","Whether similar diets improve the case for a natural life",353],["61","How the Summa puts Goatis’s teachings in order",356],["62","Whether criticism of faith in science justifies setting scientific findings aside",361],["63","Whether enhancing a person with technology helps or hinders the natural ideal",368],["64","Whether the case built up across the Books shows that Apexism can be defended",375],["65","Whether the practical advantages of religion defeat life without gods",379]]},{"n":"IX","t":"Men Women and Attraction","p":386,"q":[["66","Whether attraction follows looks",387],["67","Whether the natures of men and women are inborn",395],["68","Whether dating advice and the pills can make a man desirable",402],["69","Whether sleeping around pornography and paid attention serve nature",409],["70","Whether a natural partnership needs marriage",416],["71","Whether wanting children belongs to every man and woman",422]]},{"n":"X","t":"The Body Looks Aging and Sport","p":432,"q":[["72","Whether looks show health",433],["73","Whether teeth and faces are inherited or made by food",441],["74","Whether surgery hair and adornment improve the natural body",448],["75","Whether steroids and bodybuilding build a body",455],["76","Whether sport and endurance and cold make a man strong",464],["77","Whether longevity can be bought",471]]},{"n":"XI","t":"Substances Medicine and Modern Food","p":478,"q":[["78","Whether alcohol tobacco cannabis psychedelics and coffee have a place in a natural life",479],["79","Whether salt sugar seed oils and spices are food",487],["80","Whether doctors and modern medicine heal",494],["81","Whether fasting and extreme diets are natural",503],["82","Whether the carnivore and other diet movements follow nature",509],["83","Whether children should eat what modern parents feed them",515]]},{"n":"XII","t":"The Matrix Slavery Money School and State","p":524,"q":[["84","Whether modern life is enslavement",525],["85","Whether money wealth and work are real",534],["86","Whether schools educate",541],["87","Whether government law and police have real authority",546],["88","Whether names roles and words show what is real",552],["89","Whether screens games social media and AI belong in a natural life",559],["90","Whether some places are better to live than others",565]]},{"n":"XIII","t":"The Natural Human","p":573,"q":[["91","Whether natural peoples show the natural life",574],["92","Whether a natural day can be lived today",584],["93","Whether happiness and depression come from the way one lives",592],["94","Whether the body knows what is good",601],["95","Whether there is a natural hierarchy of the Earth",608]]},{"n":"XIV","t":"Goatis Jesus and the Religions","p":617,"q":[["96","Whether Jesus taught the natural life",618],["97","Whether Christianity is what Jesus taught",626],["98","Whether new spiritual movements escape religion",633],["99","Whether Goatis’s teaching is itself a religion",639]]},{"n":"XV","t":"Veganism and the Plant Diet","p":650,"q":[["100","Whether plants are human food",651],["101","Whether bread grains beans and starch are food",660],["102","Whether a vegan diet can nourish a human",667],["103","Whether vegans’ cravings and bodies show the truth",674],["104","Whether veganism is ethical",680],["105","Why people become vegan and how they leave",687],["106","Whether health can be read from a body",694]]},{"n":"XVI","t":"The Standard of the Senses","p":703,"q":[["107","Whether what cannot be sensed does not exist",704],["108","Whether experience is the limit of knowledge",716],["109","Whether the word God means anything",727],["110","Whether the one who denies gods must prove it",738],["111","Whether God is being itself and so beyond the senses",749],["112","Whether the senses can be trusted without God",760],["113","Whether faith is a kind of knowledge",772]]},{"n":"XVII","t":"The Classical Proofs Examined","p":789,"q":[["M01","Naturalism and its alternatives",789],["M02","Causes and what keeps things in existence",796],["M03","Necessity and how we know what is possible",804],["M04","The First Way",811],["M05","The Second Way",818],["M06","The Third Way",825],["M07","The Fourth Way",832],["M08","The Fifth Way",838],["M09","Being made of parts and being one",847],["M10","Essence and existence",855],["M11","Abstract truths and the mind of God",866],["M12","The principle of sufficient reason",874],["M13","A real thing that cannot fail to exist",885],["M14","From a necessary foundation to a God who acts",895],["M15","The Kalam argument",903],["M16","Ontological arguments",912],["M17","Divine simplicity and God’s freedom",925],["M18","Divine knowledge and time and being a person",933],["M19","Consciousness and thought and reason",940],["M20","Natural law and reasons for action",953],["M21","Fine-tuning and which explanation fits better",961],["M22","Suffering and a world that does not care",971],["M23","Divine hiddenness and a relationship with God",979],["M24","Testimony and miracles and the evidence against them",988],["M25","The verdict on the classical proofs",997]]},{"n":"XVIII","t":"The Arguments for God Answered","p":1010,"q":[["114","Whether the evidence makes God probable",1011],["115","Whether many weak arguments add up to a strong one",1022],["116","Whether right and wrong require God",1034],["117","Whether desire beauty love and meaning point to God",1048],["118","Whether religious experience shows God",1061],["119","Whether the resurrection of Jesus is established",1073],["120","Whether numbers propositions and possibilities need a divine mind",1085],["121","Whether consciousness colors and flavors need God",1097],["122","Whether the laws of nature and the world’s order need a lawgiver",1108],["123","Whether a necessary being must be a person who chooses",1120],["124","Whether the popular case for Christianity succeeds",1131],["125","Whether believers themselves live as if God exists",1145]]},{"n":"XIX","t":"The Arguments Against God","p":1158,"q":[["126","Whether nature alone is the simpler account",1159],["127","Whether an all-good all-powerful God is consistent with the world he made",1170],["128","Whether pain and pleasure are better explained without God",1183],["129","Whether a loving God would stay hidden",1195],["130","Whether a being can be all-powerful",1206],["131","Whether a being can be all-knowing and free and changeless",1218],["132","Whether a perfect bodiless timeless being can be a person who creates",1230],["133","Whether the many religions tell against each other",1241],["134","Whether religion has a natural origin",1252],["135","Whether scripture bears the marks of God",1264],["136","Whether prayer changes anything",1278],["137","Whether hell and the wager give a reason to believe",1289],["138","Whether the size and age of the world fit a God who made it for man",1302],["139","Whether reports of miracles should ever be believed",1312],["140","Whether the whole case shows that no gods exist",1322]]}];
+const TITLES = {"VII":"Competition, Hierarchy and Community","IX":"Men, Women and Attraction","X":"The Body, Looks, Aging and Sport","XI":"Substances, Medicine and Modern Food","XII":"The Matrix: Slavery, Money, School and State","XIV":"Goatis, Jesus and the Religions"};
+const PARTS = [
+  {range:"I–IV", name:"Foundations", note:"Knowledge, reality, human nature and practical judgment.", from:0, to:4},
+  {range:"V–VIII", name:"The Primal Life", note:"Nourishment, daily practice, community and the cumulative case.", from:4, to:8},
+  {range:"IX–XV", name:"The Teaching Applied", note:"Attraction, the body, medicine, the Matrix, the natural human, religion and veganism.", from:8, to:15},
+  {range:"XVI–XIX", name:"The Question of God", note:"The standard of the senses, the classical proofs and the arguments for and against God.", from:15, to:19}
+];
+const END = 1338;
+const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const partsEl = document.getElementById('parts');
+
+function render(term){
+  const t = term.trim().toLowerCase();
+  const re = t ? new RegExp('(' + t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')','ig') : null;
+  let hits = 0, html = '';
+  PARTS.forEach(p => {
+    let books = '';
+    BOOKS.slice(p.from, p.to).forEach((b, i) => {
+      const idx = p.from + i;
+      const next = idx + 1 < BOOKS.length ? BOOKS[idx+1].p : END;
+      const title = TITLES[b.n] || b.t;
+      const bookHit = re && title.toLowerCase().includes(t);
+      const qs = b.q.filter(q => !re || bookHit || q[1].toLowerCase().includes(t) || ('question ' + q[0]).toLowerCase() === t);
+      if (re && !qs.length) return;
+      hits += qs.length;
+      const hl = s => re ? esc(s).replace(re, '<mark>$1</mark>') : esc(s);
+      books += `<details class="book"${re ? ' open' : ''}><summary><span class="bnum">${b.n}</span><span class="btitle">${hl(title)}</span><span class="bmeta">${b.q.length} Q &middot; pp. ${b.p}&ndash;${next-1}<span class="chev" aria-hidden="true">&rsaquo;</span></span></summary><ol class="qs">` +
+        qs.map(q => `<li><span class="qn">Q ${q[0]}</span><span>${hl(q[1])}</span><span class="pg">${q[2]}</span></li>`).join('') + `</ol></details>`;
+    });
+    if (books) html += `<div class="part"><div class="part-tag"><span class="label">Books</span><span class="range">${p.range}</span><h3 style="font-size:1.25rem">${p.name}</h3><p>${p.note}</p></div><div class="books">${books}</div></div>`;
+  });
+  partsEl.innerHTML = html || '<p class="note">No Question matches that search. Try a shorter word, such as &ldquo;God&rdquo; or &ldquo;food&rdquo;.</p>';
+  document.getElementById('count').textContent = t ? `${hits} of 165 Questions` : '165 Questions';
+}
+render('');
+document.getElementById('q').addEventListener('input', e => render(e.target.value));
+const tg = document.getElementById('toggle');
+tg.addEventListener('click', () => {
+  const all = [...document.querySelectorAll('details.book')];
+  const open = !all.every(d => d.open);
+  all.forEach(d => d.open = open);
+  tg.textContent = open ? 'Close all' : 'Open all';
+});
+
+document.getElementById('tags').innerHTML = document.getElementById('tagline').textContent.split(', ').map(s => `<span>${esc(s)}</span>`).join('');
+document.querySelectorAll('[data-copy]').forEach(btn => btn.addEventListener('click', () => {
+  const el = document.getElementById(btn.dataset.copy);
+  const text = el.textContent.replace(/\s+/g,' ').trim();
+  const label = btn.textContent;
+  const done = msg => { btn.textContent = msg; setTimeout(() => btn.textContent = label, 1600); };
+  navigator.clipboard.writeText(text).then(() => done('Copied'), () => {
+    el.hidden = false; const r = document.createRange(); r.selectNodeContents(el);
+    const s = getSelection(); s.removeAllRanges(); s.addRange(r); done('Press Ctrl+C');
+  });
+}));
+</script>
+
+</body>
+</html>
